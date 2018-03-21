@@ -1,0 +1,204 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="EasyTransit.Admin.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Online Booking System for Multiple Transport Services</title>
+     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="Contents/bootstrap.min.css" />
+    <link rel="stylesheet" href="Contents/admin.css" />
+    <link href="Contents/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+ 
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+      
+
+     <div class="navbar navbar-inverse navbar-fixed-top" style="display:block;position:absolute;background-color:#00B4A9;">
+            <div class="container">
+                <div class="navbar-header">
+                     <a class="navbar-brand" runat="server" href="viewBusDetails.aspx"><span class="glyphicon glyphicon-road"></span>&nbsp; EasyTransit</a>
+
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                   
+                </div>
+                <div class="navbar-collapse collapse" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                   
+                    <ul class="nav navbar-nav navbar-right">                        
+                        <li><a runat="server" href="Default.aspx"><span class="glyphicon glyphicon-log-out"></span> &nbsp; Logout</a></li>
+                       
+                    </ul>
+                
+                </div>
+            </div>
+        </div>
+
+    <%-------------------------------- Side bar menu-----------------------------------%>
+
+         <div class="container-fluid" style="background-color:#F9F9F9; background-image:url(image/back.jpg);">
+                    <div class="row" style="margin-bottom:0px;">
+                                <div class="col-sm-3 col-md-3 col-lg-3">
+                                    <div class="sidebar-header">
+                                    <h3>Dashboard</h3>
+                                </div>
+                                    <div class="sidebar-footer"  style="background-color:#212930">
+                                    <ul class="list-unstyled components" style="position:center;">
+                                    <li class="active">
+                                        <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false">
+                                            <i class="glyphicon glyphicon-home"></i>
+                                            Bus Management
+                                        </a>
+                                        <ul class="collapse list-unstyled" id="homeSubmenu1">
+                                            <li><a href="addNewBus.aspx">Add New Bus</a></li>
+                                            <li><a href="ViewBusDetails.aspx">View Bus Details</a></li>
+                                           <li><a href="#">Add New Bus Routes</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                       
+                                        <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">
+                                            <i class="glyphicon glyphicon-road"></i>
+                                            Train Management
+                                        </a>
+                                        <ul class="collapse list-unstyled" id="pageSubmenu3">
+                                            <li><a href="addNewTrain.aspx">Add New Train</a></li>
+                                            <li><a href="viewTrainDetails.aspx">View Trains Details</a></li>
+                                            <li><a href="#">Add New Trains Routes</a></li>
+                            
+                                        </ul>
+                                    </li>
+                                    <li>
+                       
+                                        <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">
+                                            <i class="glyphicon glyphicon-plane"></i>
+                                            Flight Management
+                                        </a>
+                                        <ul class="collapse list-unstyled" id="pageSubmenu2">
+                                            <li><a href="addNewFlight.aspx">Add New Flight</a></li>
+                                            <li><a href="viewFlightDetails.aspx">View flights Details</a></li>
+                                            <li><a href="#">Add New Flights Routes</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="viewPessengerDetails.aspx">
+                                            <i class="glyphicon glyphicon-link"></i>
+                                            View User Details
+                                        </a>
+                                    </li>
+                                    <li>
+                                     <a href="viewReservationDetails.aspx">
+                                            <i class="glyphicon glyphicon-briefcase"></i>
+                                            View Rservation Details
+                                        </a>
+                                        </li>
+                                    <li>
+                                        <a href="viewRouteDetails.aspx">
+                                            <i class="glyphicon glyphicon-paperclip"></i>
+                                           Transporter Routes
+                                        </a>
+                                    </li>
+                                         <li>
+                                        <a href="#">
+                                            <i class="glyphicon glyphicon-paperclip"></i>
+                                           Cancelations
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="Contact.aspx">
+                                            <i class="glyphicon glyphicon-send"></i>
+                                            Contact
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                   
+                       </div>
+                     
+                        <div class="col-sm-9 col-md-9 col-lg-9">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                       
+                                    </asp:ContentPlaceHolder>
+
+                                    <hr class="container" style="height:2px;background-color:cadetblue;"/>
+                                </div>
+                   </div>
+            </div>
+              <footer class="footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="footer-desc text-center">
+                                                <p>
+                                                    <a href="/" rel="home" title="Super Dev Resources">Super Dev Resources</a> is a popular blog for finding<br>awesome free app and web development resources. <a href="/about/">Learn More</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <ul class="social">
+                                                <li><a href="http://www.facebook.com"><img src="image/fa.png" style="height:inherit; width:inherit;" /></a></li>
+                                                <li><a href="http://www.googleplus.com"><img src="image/go.png"  style="height:inherit; width:inherit;" /></a></li>
+                                                <li><a href="http://www.linkedin.com"><img src="image/lin.png"  style="height:inherit; width:inherit;" /></a></li>
+                                                <li><a href="http://www.pinterest.com"><img src="image/pin.png"  style="height:inherit; width:inherit;" /></a></li>
+                                                <li><a href="http://www.youtube.com"><img src="image/you.png"  style="height:inherit; width:inherit;" /></a></li>
+                                            </ul>
+                                        </div>
+
+                                        <nav class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                                            <div class="input-group input-group-md">
+                                              <input type="text" class="form-control" placeholder="Email Address">
+                                              <span class="input-group-addon">Subscribe</span>
+                                            </div>
+                                        </nav>
+                                    </div> <!--/.row--> 
+                                </div> <!--/.container--> 
+                            </footer> <!--/.footer-->
+    
+                       <div class="footer-bottom">
+                          <div class="container">
+                             <div class="pull-left"> Copyright © <a href="../Contact.aspx">Sondip Roy</a>.  All right reserved.</div>
+                                <div class="pull-right">
+                                  <ul>
+                                    <li><a href="../Default.aspx">Page 1</a></li>
+                                    <li><a href="ViewBusDetails.aspx">Page 2</a></li>
+                                    <li><a href="viewFlightDetails.aspx">Page 3</a></li>
+                                    <li><a href="viewReservationDetails.aspx">Page 4</a></li>
+                                        </ul> 
+                                    </div>
+                                </div>
+           </div> <!--/.footer-bottom--> 
+    </form>
+</body>
+</html>

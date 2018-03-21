@@ -1,0 +1,305 @@
+﻿body {
+    margin:0px;
+    padding:0px;
+}
+
+
+/*-------------------------------------------------------------------- Admin Login Page CSS-------------------------------------------------------*/
+.ad-login {
+    position: relative;
+    margin: 5% auto;
+    height: 200px;
+    background-color: #6DD6D6;
+    width: 470px;
+    height: 333px;
+    border-radius: 25px;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 2px solid rgba(0,0,0,.125);
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.form-control{
+    margin-top:26px;
+}
+
+.email {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    /*vertical-align: middle;*/
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    transition: 0.2s ease;
+    margin-top: 7px;
+}
+
+    .email:hover {
+        border-color: #66afe9;
+        transition: 0.2s ease;
+    }
+
+    .email:focus {
+        border-color: #66afe9;
+  
+        transition: 0.2s ease;
+    }
+
+    /*-----------------------------------------------------------Admin Login page Design End Point----------------------------------------------------------------*/
+
+    /*---------------------------------------------------------  Admin Side Bar Section-------------------------------------------------------------*/
+
+
+.sidebar-footer {
+    width: 100%;
+    height: inherit;
+    background: #280A44;
+    color: #320447;
+    transition: all 0.3s;
+}
+
+.sidebar-footer.active {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+
+        .sidebar-footer.active .sidebar-header h3, #sidebar.active .CTAs {
+            display: none;
+        }
+
+    .sidebar-footer.active .sidebar-header strong {
+        display: block;
+    }
+
+    .sidebar-footer ul li a {
+        text-align: left;
+    }
+
+    .sidebar-footer.active ul li a {
+        padding: 20px 10px;
+        text-align: center;
+        font-size: 0.85em;
+    }
+
+        .sidebar-footer.active ul li a i {
+            margin-right: 0;
+            display: block;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+    .sidebar-footer.active ul ul a {
+        padding: 10px !important;
+    }
+
+    .sidebar-footer.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+        top: auto;
+        bottom: 5px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+ .sidebar-header {
+        padding: 7px;
+        text-align:center;
+        background: #E0DCEB;
+    }
+
+ .sidebar-header strong {
+            display: none;
+            font-size: 1.8em;
+        }
+
+.sidebar-footer ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+.sidebar-footer ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+    .sidebar-footer ul li a:hover {
+        color: #000000;
+        background: #98AAF7;
+    }
+
+    .sidebar-footer ul li a i {
+        margin-right: 10px;
+    }
+
+.sidebar-footer ul li.active > a, a[aria-expanded="true"] {
+    color: #000000;
+    background: #98aaf7;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #E0DCEB;
+}
+
+/*------------------------------------------------------------ End Point of Side Bar-------------------------------------------*/
+
+/*-------------------------------------------------------- Start footer Section--------------------------------------------*/
+.footer {
+    position: absolute;
+    display: block;
+    height: 200px;
+    width: 100%;
+    background: #D6DBE9;
+    color: #e0dceb;
+    text-align: center;
+}
+
+
+/*----------------------------------------------------------- Start Admin Add New Transport ----------------------------------------*/
+.ad-Bus {
+    position: relative;
+    margin: 5% auto;
+    background-color: #E0E8CB;
+    width: 425px;
+    height: auto;
+    padding-bottom: 10px;
+    border-radius: 4px;
+}
+.Bus-body {
+    flex: 1 1 auto;
+    padding-left: 80px;
+    padding-top: 24px;
+    font-size:14px;
+}
+.Bus-header {
+    padding: 1.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #9BB5D8;
+    border-bottom: 2px solid rgba(0,0,0,.125);
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+   /*----------------------------------------------------------- Start Footer Section---------------------------------------------------------------*/
+
+.footer {
+    background-color: #2E3436;
+    padding: 0px 0px;
+    position: inherit;
+}
+.footer-desc p {
+        color: #DDD;
+        margin: 15px 0 8px;
+    }
+.social {
+        margin: 0 auto;
+        display: table;
+    }
+.social li {
+            float: left;
+            list-style:none;
+        }
+
+    .social li a {
+        display: block;
+        font-size: 1em;
+        color: #DDD;
+        width: 35px;
+        height: auto;
+        line-height: 32px;
+        text-align: center;
+        background-color: #F5F5F5;
+        border-radius: 2px;
+        margin: 15px 4px
+    }
+
+.social li a:hover {
+                    background-color: #3A4144;
+                }
+
+   .footer .input-group {
+        margin: 15px 0;
+    }
+
+.footer .form-control {
+        border-radius: 2px 0 0 2px;
+        background-color: #585C5D;
+        border-color: #585C5D;
+        color: #DDD;
+        font-size: 15px;
+    }
+
+  .footer .form-control:hover,
+  .footer .form-control:focus {
+            border: 1px solid #222728;
+            background-color: #222728;
+        }
+
+.footer .input-group-addon {
+        border-radius: 0 2px 2px 0;
+        background-color: #F7931D;
+        color: #FFF;
+        border-color: #F7931D;
+        font-size: 15px;
+    }
+
+.footer-bottom {
+    background-color: #222728;
+    padding: 15px 0;
+    color: #DDD;
+    font-size: 13px;
+    position: relative;
+}
+
+ .footer-bottom ul li {
+        display: inline-block;
+    }
+
+.footer-bottom ul li a {
+            display: block;
+            padding-left: 8px;
+        }
+
+ .footer-bottom ul li a:after {
+                content: "-";
+                padding-left: 8px;
+            }
+ .footer-bottom ul li:last-child a:after {
+            content: "";
+        }
