@@ -20,6 +20,9 @@ namespace EasyTransit
         void Session_Start(object sender, EventArgs e)
         {
             Session["ad-email"] = null;
+            Session["user-email"] = null;
         }
+
+        
     }
 }

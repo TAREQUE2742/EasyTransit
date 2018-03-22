@@ -6,7 +6,7 @@
 <head runat="server">
      <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Online Booking System for Multiple Transport Services</title>
+    <title><%: Page.Title %>- Online Booking System for Multiple Transport Services</title>
      <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="Contents/bootstrap.min.css" />
     <link rel="stylesheet" href="Contents/admin.css" />
@@ -54,11 +54,18 @@
                         <span class="icon-bar"></span>
                     </button>
                    
+                     <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                     <asp:Label ID="lblwelcome" runat="server" style="float:right" ForeColor="Black" Width="50%"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
                 <div class="navbar-collapse collapse" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
                    
                     <ul class="nav navbar-nav navbar-right">                        
-                        <li><a runat="server" href="Default.aspx"><span class="glyphicon glyphicon-log-out"></span> &nbsp; Logout</a></li>
+                        <li>
+                            <%--<a runat="server" href="Default.aspx"><span class="glyphicon glyphicon-log-out"></span> &nbsp; Logout</a>--%>
+                            <span class="glyphicon glyphicon-log-out"></span><asp:Button  runat="server" CssClass="btn btn-primary" Style="padding:18px;" ID="Logout" Text="Logout" OnClick="Logout_Click" />
+                        </li>
                        
                     </ul>
                 
@@ -66,7 +73,7 @@
             </div>
         </div>
 
-    <%-------------------------------- Side bar menu-----------------------------------%>
+    <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
 
          <div class="container-fluid" style="background-color:#F9F9F9; background-image:url(image/back.jpg);">
                     <div class="row" style="margin-bottom:0px;">

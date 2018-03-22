@@ -11,7 +11,11 @@ namespace EasyTransit.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["ad-email"] == null)
+            {
+                Session.Abandon();
+                Response.Redirect("Default.aspx");
+            }
         }
 
         protected void btnedittrain_Click(object sender, ImageClickEventArgs e)

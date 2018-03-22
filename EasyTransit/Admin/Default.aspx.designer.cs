@@ -31,6 +31,15 @@ namespace EasyTransit.Admin {
         protected global::System.Web.UI.WebControls.TextBox ademail;
         
         /// <summary>
+        /// rfvademail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvademail;
+        
+        /// <summary>
         /// adpass control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,14 @@ namespace EasyTransit.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox adpass;
+        
+        /// <summary>
+        /// rfvadpass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvadpass;
     }
 }

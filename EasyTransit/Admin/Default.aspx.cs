@@ -15,21 +15,38 @@ namespace EasyTransit.Admin
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString.ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Clear();
+            
+            con.Open();
+          
+        }
+
+        protected void Page_Unload(object sender, EventArgs e)
+        {
+            con.Close();
         }
 
         protected void Unnamed3_Click(object sender, EventArgs e)
         {
-            Session["ad-email"] = ademail.Text;
-            con.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = "select * from Admin_info where email = @email and password = @password";
             cmd.Parameters.AddWithValue("@email", ademail.Text);
             cmd.Parameters.AddWithValue("@password",adpass.Text);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            Response.Redirect("ViewBusDetails.aspx");
+            SqlDataReader dr;
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows)
+            {
+                Session["ad-email"] = ademail.Text;
+                Response.Redirect("ViewBusDetails.aspx");
+                dr.Close();
+            }
+            else
+            {
+                dr.Close();
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Login Failed')</script>");
+
+            }
             
         }
     }

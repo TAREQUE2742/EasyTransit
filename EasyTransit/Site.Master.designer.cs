@@ -22,6 +22,24 @@ namespace EasyTransit {
         protected global::System.Web.UI.WebControls.PlaceHolder head;
         
         /// <summary>
+        /// btnlogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnlogin;
+        
+        /// <summary>
+        /// btnregistration control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnregistration;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

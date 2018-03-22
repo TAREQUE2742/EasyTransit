@@ -31,6 +31,15 @@ namespace EasyTransit {
         protected global::System.Web.UI.WebControls.TextBox remail;
         
         /// <summary>
+        /// revemail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revemail;
+        
+        /// <summary>
         /// rpassword control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace EasyTransit {
         protected global::System.Web.UI.WebControls.TextBox rcontact;
         
         /// <summary>
+        /// revcontact control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revcontact;
+        
+        /// <summary>
         /// rage control.
         /// </summary>
         /// <remarks>
@@ -92,5 +110,14 @@ namespace EasyTransit {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox rage;
+        
+        /// <summary>
+        /// lblRegistrationsms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegistrationsms;
     }
 }

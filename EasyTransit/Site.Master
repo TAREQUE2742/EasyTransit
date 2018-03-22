@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Online Booking System for Multiple Transport Services</title>
+    <title><%: Page.Title %>- Online Booking System for Multiple Transport Services</title>
      <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="Content/bootstrap.min.css" />
     <link rel="stylesheet" href="Content/Site.css" />
@@ -62,9 +62,8 @@
                         
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Userlogin"><span class="glyphicon glyphicon-log-in"></span> &nbsp; Login</a></li>
-                        <li><a runat="server" href="~/UserRegistration" data--toggle="modal"><span class="glyphicon glyphicon-user"></span> &nbsp; Register Now</a></li>
-                       
+                        <li><asp:Button  runat="server" PostBackUrl="~/Userlogin.aspx" ID="btnlogin" Text="Login" CssClass="btn btn-sm" Style="padding:18px;background:none;font-size:14px;color:white;" /></li>
+                        <li><asp:Button runat="server" PostBackUrl="~/UserRegistration.aspx" CssClass="btn btn-sm" ID="btnregistration" Text="Register" Style="padding:18px;background:none;font-size:14px;color:white;" /></li>
                     </ul>
                 </div>
             </div>

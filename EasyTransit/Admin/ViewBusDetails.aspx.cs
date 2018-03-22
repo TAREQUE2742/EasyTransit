@@ -9,10 +9,7 @@ namespace EasyTransit.Admin
 {
     public partial class ViewBusDetails : System.Web.UI.Page
     {
-       
-        
 
-      
 
         SqlConnection sqlCon = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString.ToString());
         protected void Page_Load(object sender, EventArgs e)
@@ -25,7 +22,7 @@ namespace EasyTransit.Admin
             {
                 if (!IsPostBack)
                 {
-
+                    
                     SerachView.Visible = true;
                     GridBusView.Visible = true;
                 }

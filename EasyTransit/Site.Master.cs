@@ -11,7 +11,15 @@ namespace EasyTransit
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //if (Session["user-email"] == null)
+            //{
+            //    Response.Redirect("Userlogin.aspx");
+            //}
+            //else
+            //{
+            //    lbluserWelcome.Text = "Welcome" + " " + Session["ad-email"].ToString();
+            //    //Response.Cache.SetNoStore();
+            //}
         }
     }
 }

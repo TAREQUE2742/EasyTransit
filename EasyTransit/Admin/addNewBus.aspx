@@ -36,7 +36,7 @@
                      <div class="Bus-body" style="position:center;">
                         <div class="form-group" style="height:auto">
                             <asp:Label ID="Label1" runat="server"  CssClass="active" Font-Bold="True" Text="Company Name"  Style="font-size: 16px;font-weight: inherit;display:block;"></asp:Label>
-                            <asp:DropDownList ID="DropDownListcom" AppendDataBoundItems="true" runat="server" Width="100%" CssClass="form-control" DataSourceID="SqlDataSource1" DataTextField="bcompany_name" DataValueField="bcompany_id" AutoPostBack="True">
+                            <asp:DropDownList ID="DropDownListcom" AppendDataBoundItems="true" runat="server" Width="100%" CssClass="form-control" DataSourceID="SqlDataSource1" DataTextField="bcompany_name" DataValueField="bcompany_id">
                                 <asp:ListItem Value="0">Select Company Name</asp:ListItem>
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:mycon %>" DeleteCommand="DELETE FROM [Bus_company] WHERE [bcompany_id] = @original_bcompany_id AND [bcompany_name] = @original_bcompany_name" 

@@ -200,6 +200,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Admin\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="RUser.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\airplane.jpg" />
     <Content Include="images\airplane1.jpg" />
@@ -253,6 +254,13 @@
     <Content Include="images\train.png" />
     <Content Include="images\you.png" />
     <Content Include="js\jssor.slider-27.0.0.min.js" />
+    <Content Include="RUserBus.aspx" />
+    <Content Include="RUserBusSearch.aspx" />
+    <Content Include="RUserFlight.aspx" />
+    <Content Include="RUserFlightSearch.aspx" />
+    <Content Include="ruserslide.aspx" />
+    <Content Include="RUserTrain.aspx" />
+    <Content Include="RUserTrainSearch.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -284,10 +292,12 @@
     <Content Include="Site.Master" />
     <Content Include="UserBus.aspx" />
     <Content Include="UserFlight.aspx" />
+    <Content Include="UserFlightSearch.aspx" />
     <Content Include="Userlogin.aspx" />
     <Content Include="UserRegistration.aspx" />
     <Content Include="UserSearch.aspx" />
     <Content Include="UserTrain.aspx" />
+    <Content Include="UserTrainSearch.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -406,6 +416,62 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RUser.Master.cs">
+      <DependentUpon>RUser.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RUser.Master.designer.cs">
+      <DependentUpon>RUser.Master</DependentUpon>
+    </Compile>
+    <Compile Include="RUserBus.aspx.cs">
+      <DependentUpon>RUserBus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RUserBus.aspx.designer.cs">
+      <DependentUpon>RUserBus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RUserBusSearch.aspx.cs">
+      <DependentUpon>RUserBusSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RUserBusSearch.aspx.designer.cs">
+      <DependentUpon>RUserBusSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RUserFlight.aspx.cs">
+      <DependentUpon>RUserFlight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RUserFlight.aspx.designer.cs">
+      <DependentUpon>RUserFlight.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RUserFlightSearch.aspx.cs">
+      <DependentUpon>RUserFlightSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RUserFlightSearch.aspx.designer.cs">
+      <DependentUpon>RUserFlightSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ruserslide.aspx.cs">
+      <DependentUpon>ruserslide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ruserslide.aspx.designer.cs">
+      <DependentUpon>ruserslide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RUserTrain.aspx.cs">
+      <DependentUpon>RUserTrain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RUserTrain.aspx.designer.cs">
+      <DependentUpon>RUserTrain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RUserTrainSearch.aspx.cs">
+      <DependentUpon>RUserTrainSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RUserTrainSearch.aspx.designer.cs">
+      <DependentUpon>RUserTrainSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -433,6 +499,13 @@
     </Compile>
     <Compile Include="UserFlight.aspx.designer.cs">
       <DependentUpon>UserFlight.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserFlightSearch.aspx.cs">
+      <DependentUpon>UserFlightSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserFlightSearch.aspx.designer.cs">
+      <DependentUpon>UserFlightSearch.aspx</DependentUpon>
     </Compile>
     <Compile Include="Userlogin.aspx.cs">
       <DependentUpon>Userlogin.aspx</DependentUpon>
@@ -462,6 +535,13 @@
     <Compile Include="UserTrain.aspx.designer.cs">
       <DependentUpon>UserTrain.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserTrainSearch.aspx.cs">
+      <DependentUpon>UserTrainSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserTrainSearch.aspx.designer.cs">
+      <DependentUpon>UserTrainSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -472,6 +552,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="RUSER\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

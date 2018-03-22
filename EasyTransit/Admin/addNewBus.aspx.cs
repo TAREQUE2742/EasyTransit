@@ -34,7 +34,7 @@ namespace EasyTransit.Admin
             SqlConnection con = new SqlConnection(sqlcon);
 
             con.Open();
-            SqlCommand cmd = new SqlCommand("select count(capacity) from bus_details", con);
+            SqlCommand cmd = new SqlCommand("select MAX(Sl) from bus_details ", con);
             int i = Convert.ToInt32(cmd.ExecuteScalar());
             con.Close();
             i++;
@@ -45,36 +45,39 @@ namespace EasyTransit.Admin
 
         protected void btnAddBus(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(sqlcon);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("insert into bus_details (bus_id,bcompany_id, bus_type,capacity) values(@bus_id,@bcompany_id, @bus_type,@capacity)", con);
-            cmd.Parameters.AddWithValue("@bus_id", lblbusid.Text);
-            cmd.Parameters.AddWithValue("@bcompany_id", DropDownListcom.SelectedItem.Value);
-            cmd.Parameters.AddWithValue("@bus_type", DropDownListcetagory.SelectedItem.Text);
-            //cmd.Parameters.AddWithValue("@capacity", txtBusCap.Text);
-            cmd.Parameters.AddWithValue("@capacity", lblcap.Text);
-            //lblsms.Text = "Record Insterted successfully..!";
-            cmd.ExecuteNonQuery();
 
-            con.Close();
+            
+                    SqlConnection con = new SqlConnection(sqlcon);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("insert into bus_details (bus_id,bcompany_id, bus_type,capacity) values(@bus_id,@bcompany_id, @bus_type,@capacity)", con);
+                    cmd.Parameters.AddWithValue("@bus_id", lblbusid.Text);
+                    cmd.Parameters.AddWithValue("@bcompany_id", DropDownListcom.SelectedItem.Value);
+                    cmd.Parameters.AddWithValue("@bus_type", DropDownListcetagory.SelectedItem.Text);
+                    //cmd.Parameters.AddWithValue("@capacity", txtBusCap.Text);
+                    cmd.Parameters.AddWithValue("@capacity", lblcap.Text);
+                    //lblsms.Text = "Record Insterted successfully..!";
+                    cmd.ExecuteNonQuery();
 
-
-            lblsms.Text = "Record Inserted Successfully..!";
-
-            DropDownListcom.SelectedIndex = 0;
-            DropDownListcetagory.SelectedIndex = 0;
-            lblcap.Text = "";
-            //ClearTextBox();
-            GenerateAutoID();
-
-            //Response.Redirect(Request.Url.AbsoluteUri);
+                    con.Close();
 
 
-            //Response.Write("<script LANGUAGE='JavaScript' >alert('Record Inserted Successfully...!')</script>");
+                    lblsms.Text = "Record Inserted Successfully..!";
 
+                    DropDownListcom.SelectedIndex = 0;
+                    DropDownListcetagory.SelectedIndex = 0;
+                    lblcap.Text = "";
+                    //ClearTextBox();
+                    GenerateAutoID();
+
+                    //Response.Redirect(Request.Url.AbsoluteUri);
+
+
+                    //Response.Write("<script LANGUAGE='JavaScript' >alert('Record Inserted Successfully...!')</script>");
+
+          
 
         }
-
+ 
 
         protected void DropDownListcetagory_SelectedIndexChanged(object sender, EventArgs e)
         {

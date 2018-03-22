@@ -17,6 +17,7 @@ namespace EasyTransit.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblsms.Text = "";
             if (!IsPostBack)
             {
                
@@ -24,20 +25,12 @@ namespace EasyTransit.Admin
 
             }
         }
-        private void ClearTextBox()
-        {
-            DropDownlistcategory.SelectedItem.Text = "";
-            DropDownlistcom.SelectedItem.Value = "";
-            lblflightcap.Text = "";
-            Response.Redirect(Request.RawUrl);
-        }
-
+       
         private void GenerateAutoID()
         {
             SqlConnection con = new SqlConnection(sqlcon);
-
             con.Open();
-            SqlCommand cmd = new SqlCommand("select count(flight_id) from flight_details", con);
+            SqlCommand cmd = new SqlCommand("select MAX(Sl) from flight_details ", con);
             int i = Convert.ToInt32(cmd.ExecuteScalar());
             con.Close();
             i++;
@@ -67,7 +60,12 @@ namespace EasyTransit.Admin
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            ClearTextBox();
+            lblsms.Text = "Record Inserted Successfully..!";
+
+            DropDownlistcom.SelectedIndex = 0;
+            DropDownlistcategory.SelectedIndex = 0;
+            lblflightcap.Text = "";
+            //ClearTextBox();
             GenerateAutoID();
         }
 

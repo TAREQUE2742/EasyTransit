@@ -13,22 +13,40 @@ namespace EasyTransit {
     public partial class Userlogin {
         
         /// <summary>
-        /// lusername control.
+        /// tusername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lusername;
+        protected global::System.Web.UI.WebControls.TextBox tusername;
         
         /// <summary>
-        /// lpassword control.
+        /// revusername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lpassword;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revusername;
+        
+        /// <summary>
+        /// tpassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tpassword;
+        
+        /// <summary>
+        /// lblusersms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblusersms;
         
         /// <summary>
         /// loginbtn control.

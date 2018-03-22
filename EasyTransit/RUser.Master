@@ -1,0 +1,353 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RUser.master.cs" Inherits="EasyTransit.RUser" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>- Online Booking System for Multiple Transport Services</title>
+     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="Content/Site.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+         <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:ContentPlaceHolder>
+     <webopt:bundlereference runat="server" path="~/Content/css" />
+</head>
+<body>
+  <div class="container-fluid" style="background-image:url(images/back.jpg);">
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#233064;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/ruserslide.aspx"><span class="glyphicon glyphicon-road"></span>&nbsp; EasyTransit</a>
+                   
+                </div>
+                <div class="navbar-collapse collapse" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/ruserslide.aspx"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+                        <li><a runat="server" href="~/RUserFlight"><span class="glyphicon glyphicon-plane"></span>&nbsp; Flights</a></li>
+                         <li><a runat="server" href="~/RUserTrain"><img src="images/train.png" style="height:20px; width:20px;"/> &nbsp; Trains</a></li>
+                        <li><a runat="server" href="~/RUserBus.aspx"><img src="images/bus.png" style="height:20px; width:20px;"/> &nbsp; Buses</a></li>
+                        
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="margin-top:20px;"><asp:Label ID="lbluserwelcome" runat="server" ForeColor="Green"></asp:Label></li>
+                        <li><asp:Button  runat="server" onclick="btnlogout_Click" ID="btnlogout" Text="Logout" CssClass="btn btn-sm" Style="padding:18px;background:none;font-size:14px;color:white;" /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+                
+        <script src="js/jssor.slider-27.0.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jssor_1_slider_init = function() {
+
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:800,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:800,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $Cols: 1,
+              $Align: 0,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              },
+              $ThumbnailNavigatorOptions: {
+                $Class: $JssorThumbnailNavigator$,
+                $Cols: 6,
+                $Orientation: 2,
+                $Align: 156
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 1170;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+        <div class="container" style="padding:0px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+         <hr class="container" style="height:2px;background-color:#23194F;" />
+        <div class="container">
+            <asp:PlaceHolder ID="Content1" runat="server">
+        <h3 style="text-align:center;font-family:'Comic Sans MS';margin-top:8px;">Buy Tickets In 3 Easy Steps &nbsp; <span class="glyphicon glyphicon-hand-down"></span></h3>
+                </asp:PlaceHolder>
+            </div>
+         <hr class="container" style="height:2px;background-color:#343B66;margin-top:10px;" />
+
+        <div class="container">
+                <div class="col-md-4">
+                        <div class="col-md-3" style="background-color:#F1F1F1;height:75px;text-align: center;margin-bottom: 10px;">
+                            <span class="glyphicon glyphicon-search" style="font-size:3em;padding-top:18px;color:#D2D2D2;"></span>
+
+                        </div>
+                              <div class="col-md-9" style="margin-bottom: 10px;">
+                                  <h3 style="font-weight: bold;color:#140028;margin-top: 0;">Search</h3>
+                                  <div>
+                                  Choose your origin, destination, journey dates and search for expected Vehicles
+                                </div>
+                          </div> 
+                    </div>
+                <div class="col-md-4">
+                        <div class="col-md-3" style="background-color:#F1F1F1;height:75px;text-align: center;margin-bottom: 10px;">
+                            <img src="images/bus.png" style="height:55px;width:50px;color:#D2D2D2;padding-top:18px;color:#D2D2D2;"/>
+
+                        </div>
+                          <div class="col-md-9" style="margin-bottom: 10px;">
+                                  <h3 style="font-weight: bold;color:#140028;margin-top: 0;">Select</h3>
+                                  <div>
+                                  Select Your Desire Trip and choose your seats
+                                </div>
+                          </div> 
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-3" style="background-color:#F1F1F1;height:75px;text-align: center;margin-bottom: 10px;">
+                            <span class="glyphicon glyphicon-search" style="font-size:3em;padding-top:18px;color:#D2D2D2;"></span>
+
+                        </div>
+                              <div class="col-md-9" style="margin-bottom: 10px;">
+                                  <h3 style="font-weight: bold;color:#140028;margin-top: 0;">Pay</h3>
+                                  <div>
+                                  Pay for the tickets via Debit / Credit Cards, bKash or cash 
+                                </div>
+                          </div> 
+                </div>
+            </div>
+        <hr />
+    <div class="container">
+        <div class="col-sm-6 col-md-6 col-lg-6" style="height:60px; padding:10px;">
+            <div class="safe" style="height:50px;width:auto;background:#D2D2D2;padding:10px;text-align:center;font-size: 22px;color: #140028;">
+                <span class="glyphicon glyphicon-lock" style="margin-left:3px;"></span> Safe and Secure Transections.
+
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6" style="height:60px;padding:10px;">
+            <div class="safe" style="height:50px;width:auto;background:#D2D2D2;padding:10px;text-align:center;font-size: 22px;color: #140028;">
+                <span class="glyphicon glyphicon-inbox" style="margin-left:3px;"></span> Get Notifications for Bus Status.
+            </div>
+
+        </div>
+
+    </div>
+        <hr />
+       <div class="container" style="background:#E0DCEB;">
+          <table class="table">
+              <thead>
+                 <h3>Available Buses</h3>
+                  <tr>
+                      <th style="padding:5px;"></th>
+                       <th style="padding:5px;"></th>
+                       <th style="padding:5px;"></th>
+                       <th style="padding:5px;"></th>
+                       <th style="padding:5px;"></th>
+                  </tr>
+              </thead>
+              <tbody>
+                   <tr>
+                    <td>Hanif Enterprise</td>
+                    <td>Nabil Enterprise</td>
+                    <td>Syamoli Enterprise</td>
+                    <td>GreenLine Enterprise</td>
+                    <td>Haque Enterprise</td>
+
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>Ekota Enterprise</td>
+                    <td>Ena Enterprise</td>
+                    <td>TR Travels</td>
+                    <td>SR Travels</td>
+                    <td>Dipjol Enterprise</td>
+
+                </tr>
+                  </tbody>
+              <tbody>
+                <tr>
+                    <td>pabna Express</td>
+                    <td>Sarker Travels</td>
+                    <td>SkyLine Enterprise</td>
+                    <td>Eagle Enterprise</td>
+                    <td>Keya Enterprise</td>
+
+                </tr>
+              </tbody>
+              </table>
+           </div>
+          <hr />
+       <div class="container" style="background:#E0DCEB;">
+          <table class="table">
+              <thead>
+                 <h3>Available Routes</h3>
+                  <tr>
+                      <th></th>
+                       <th></th>
+                       <th></th>
+                       <th></th>
+                       <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                   <tr>
+                    <td>Dhaka-Dinajpur</td>
+                    <td>Dhaka-Panchagarh</td>
+                    <td>Dhaka-Thakurgaon</td>
+                    <td>Dhaka-Rangpur</td>
+                    <td>Dhaka-Kurigram</td>
+
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                    <td>Dhaka-Sylhet</td>
+                    <td>Dhaka-Mymansingh</td>
+                    <td>Dhaka-Pabna</td>
+                    <td>Dhaka-Rajshahi</td>
+                    <td>Dhaka-Khulna</td>
+
+                </tr>
+                  </tbody>
+              <tbody>
+                <tr>
+                    <td>Dhaka-Barisal</td>
+                    <td>Dhaka-Comilla</td>
+                    <td>Dhaka-Chittagaon</td>
+                    <td>Dhaka-Cox-Bazar</td>
+                    <td>Dhaka-Teknaf</td>
+
+                </tr>
+              </tbody>
+              </table>
+           </div>
+        
+
+
+    <script type="text/javascript">jssor_1_slider_init();</script>
+
+        
+            <hr />
+         <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                       <div class="col-xs-12">
+                        <div class="footer-desc text-center">
+                               <p>
+                                     <a href="/" rel="home" title="Super Dev Resources">Super Dev Resources</a> is a popular blog for finding<br>awesome free app and web development resources. <a href="/about/">Learn More</a>
+                              </p>
+                        </div>
+                     </div>
+                      <div class="col-xs-12">
+                                            <ul class="social">
+                                                <li><a href="http://www.facebook.com"><img src="images/fa.png" style="height:inherit; width:inherit;" /></a></li>
+                                                <li><a href="http://www.googleplus.com"><img src="images/go.png"  style="height:inherit; width:inherit;" /></a></li>
+                                                <li><a href="http://www.linkedin.com"><img src="images/lin.png"  style="height:inherit; width:inherit;" /></a></li>
+                                                <li><a href="http://www.pinterest.com"><img src="images/pin.png"  style="height:inherit; width:inherit;" /></a></li>
+                                                <li><a href="http://www.youtube.com"><img src="images/you.png"  style="height:inherit; width:inherit;" /></a></li>
+                                            </ul>
+                                        </div>
+
+                                        <nav class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                                            <div class="input-group input-group-md">
+                                              <input type="text" class="form-control" placeholder="Email Address"/>
+                                             <span class="input-group-addon">Subscribe</span>
+                                              
+                                            </div>
+                                        </nav>
+                                    </div> <!--/.row--> 
+                                </div> <!--/.container--> 
+                            </footer> <!--/.footer-->
+    
+                       <div class="footer-bottom">
+                          <div class="container">
+                             <div class="pull-left"> Copyright © Sondip Roy  All right reserved.</div>
+                                <div class="pull-right">
+                                   
+                                  <h5>  Project Name : Online Booking System for Multiple Transport Services</h5>
+                                    </div>
+                                </div>
+           </div> <!--/.footer-bottom--> 
+    </form>
+  </div>
+</body>
+</html>

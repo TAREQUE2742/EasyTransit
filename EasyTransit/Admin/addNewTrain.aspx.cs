@@ -17,26 +17,21 @@ namespace EasyTransit.Admin
         string trainid = "Train-";
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblsms.Text = "";
             if (!IsPostBack)
             {
 
                 GenerateAutoID();
             }
         }
-        private void ClearTextBox()
-        {
-           DropDownListcom.SelectedItem.Value = "";
-            DropDownListcetagory.SelectedItem.Text= "";
-            lbltraincap.Text = "";
-            Response.Redirect(Request.RawUrl);
-        }
+        
 
         private void GenerateAutoID()
         {
             SqlConnection con = new SqlConnection(sqlcon);
 
             con.Open();
-            SqlCommand cmd = new SqlCommand("select count(train_id) from train_details", con);
+            SqlCommand cmd = new SqlCommand("select MAX(Sl) from train_details ", con);
             int i = Convert.ToInt32(cmd.ExecuteScalar());
             con.Close();
             i++;
@@ -71,7 +66,12 @@ namespace EasyTransit.Admin
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            ClearTextBox();
+            lblsms.Text = "Record Inserted Successfully..!";
+
+            DropDownListcom.SelectedIndex = 0;
+            DropDownListcetagory.SelectedIndex = 0;
+            lbltraincap.Text = "";
+            //ClearTextBox();
             GenerateAutoID();
         }
     }
