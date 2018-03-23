@@ -92,7 +92,7 @@
                  </div>
                 <div class="form-group" style="height:auto;">
                  <asp:Button runat="server" Text="Add New Train" CssClass="btn btn-primary btn-block" ID="btnaddTrain" OnClick="btnaddTrain_Click"/>
-                     <asp:Label runat="server" ID="lblsms" CssClass="form-control" Width="82%" Style="display:block;"></asp:Label>
+                     <asp:Label runat="server" ID="lblsms" Width="82%" Style="display:block;"></asp:Label>
                     </div>
             </div>
        </div>

@@ -91,7 +91,8 @@
                                         <ul class="collapse list-unstyled" id="homeSubmenu1">
                                             <li><a href="addNewBus.aspx">Add New Bus</a></li>
                                             <li><a href="ViewBusDetails.aspx">View Bus Details</a></li>
-                                           <li><a href="#">Add New Bus Routes</a></li>
+                                           <li><a href="AddNewBusRoute.aspx">Add New Bus Routes</a></li>
+                                            <li><a href="AddBusSchedule.aspx">Add Bus Schedule</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -103,7 +104,8 @@
                                         <ul class="collapse list-unstyled" id="pageSubmenu3">
                                             <li><a href="addNewTrain.aspx">Add New Train</a></li>
                                             <li><a href="viewTrainDetails.aspx">View Trains Details</a></li>
-                                            <li><a href="#">Add New Trains Routes</a></li>
+                                            <li><a href="AddNewTrainRoute.aspx">Add New Trains Routes</a></li>
+                                            <li><a href="AddTrainSchedule.aspx">Add Trains Schedule</a></li>
                             
                                         </ul>
                                     </li>
@@ -116,7 +118,8 @@
                                         <ul class="collapse list-unstyled" id="pageSubmenu2">
                                             <li><a href="addNewFlight.aspx">Add New Flight</a></li>
                                             <li><a href="viewFlightDetails.aspx">View flights Details</a></li>
-                                            <li><a href="#">Add New Flights Routes</a></li>
+                                            <li><a href="AddNewFlightRoute.aspx">Add New Flights Routes</a></li>
+                                            <li><a href="AddNewFlightRoute.aspx">Add Flights Schedule</a></li>
                                         </ul>
                                     </li>
                                     <li>

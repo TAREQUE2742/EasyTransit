@@ -76,7 +76,7 @@
                 <br />
                  <div class="form-group" style="height:auto;">
                      <asp:Button ID="btnaddFlight" runat="server" Text="Add New Flight" CssClass="btn btn-primary btn-block" OnClick="btnaddFlight_Click" />      
-                     <asp:Label runat="server" ID="lblsms" CssClass="form-control" Width="82%" Style="display:block;"></asp:Label>
+                     <asp:Label runat="server" ID="lblsms" Width="82%" Style="display:block;"></asp:Label>
 
                        </div>
                    

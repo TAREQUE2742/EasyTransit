@@ -128,9 +128,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\AddBusSchedule.aspx" />
     <Content Include="Admin\addNewBus.aspx" />
+    <Content Include="Admin\AddNewBusRoute.aspx" />
     <Content Include="Admin\addNewFlight.aspx" />
+    <Content Include="Admin\AddNewFlightRoute.aspx" />
     <Content Include="Admin\addNewTrain.aspx" />
+    <Content Include="Admin\AddNewTrainRoute.aspx" />
+    <Content Include="Admin\AddTrainSchedule.aspx" />
     <Content Include="Admin\Contact.aspx" />
     <Content Include="Admin\Contents\admin.css" />
     <Content Include="Admin\Contents\bootstrap.css" />
@@ -304,12 +309,26 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddBusSchedule.aspx.cs">
+      <DependentUpon>AddBusSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddBusSchedule.aspx.designer.cs">
+      <DependentUpon>AddBusSchedule.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\addNewBus.aspx.cs">
       <DependentUpon>addNewBus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\addNewBus.aspx.designer.cs">
       <DependentUpon>addNewBus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddNewBusRoute.aspx.cs">
+      <DependentUpon>AddNewBusRoute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddNewBusRoute.aspx.designer.cs">
+      <DependentUpon>AddNewBusRoute.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\addNewFlight.aspx.cs">
       <DependentUpon>addNewFlight.aspx</DependentUpon>
@@ -318,12 +337,33 @@
     <Compile Include="Admin\addNewFlight.aspx.designer.cs">
       <DependentUpon>addNewFlight.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddNewFlightRoute.aspx.cs">
+      <DependentUpon>AddNewFlightRoute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddNewFlightRoute.aspx.designer.cs">
+      <DependentUpon>AddNewFlightRoute.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\addNewTrain.aspx.cs">
       <DependentUpon>addNewTrain.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\addNewTrain.aspx.designer.cs">
       <DependentUpon>addNewTrain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddNewTrainRoute.aspx.cs">
+      <DependentUpon>AddNewTrainRoute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddNewTrainRoute.aspx.designer.cs">
+      <DependentUpon>AddNewTrainRoute.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddTrainSchedule.aspx.cs">
+      <DependentUpon>AddTrainSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddTrainSchedule.aspx.designer.cs">
+      <DependentUpon>AddTrainSchedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\admin.Master.cs">
       <DependentUpon>admin.Master</DependentUpon>
