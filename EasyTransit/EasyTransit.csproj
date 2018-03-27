@@ -129,6 +129,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Admin\AddBusSchedule.aspx" />
+    <Content Include="Admin\AddFlightSchedule.aspx" />
     <Content Include="Admin\addNewBus.aspx" />
     <Content Include="Admin\AddNewBusRoute.aspx" />
     <Content Include="Admin\addNewFlight.aspx" />
@@ -315,6 +316,13 @@
     </Compile>
     <Compile Include="Admin\AddBusSchedule.aspx.designer.cs">
       <DependentUpon>AddBusSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddFlightSchedule.aspx.cs">
+      <DependentUpon>AddFlightSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddFlightSchedule.aspx.designer.cs">
+      <DependentUpon>AddFlightSchedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\addNewBus.aspx.cs">
       <DependentUpon>addNewBus.aspx</DependentUpon>

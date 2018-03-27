@@ -13,12 +13,57 @@ namespace EasyTransit.Admin {
     public partial class viewPessengerDetails {
         
         /// <summary>
-        /// ViewPassenger control.
+        /// txtpassengerDetails control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ViewPassenger;
+        protected global::System.Web.UI.WebControls.TextBox txtpassengerDetails;
+        
+        /// <summary>
+        /// tbnPassengerSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button tbnPassengerSearch;
+        
+        /// <summary>
+        /// PassengerGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView PassengerGrid;
+        
+        /// <summary>
+        /// sdsPassenger control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsPassenger;
+        
+        /// <summary>
+        /// passengerView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView passengerView;
+        
+        /// <summary>
+        /// sdspassengerView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sdspassengerView;
     }
 }

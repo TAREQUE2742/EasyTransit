@@ -10,186 +10,186 @@
 namespace EasyTransit.Admin {
     
     
-    public partial class AddBusSchedule {
+    public partial class AddFlightSchedule {
         
         /// <summary>
-        /// txtsearchBSC control.
+        /// txtFSCsearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtsearchBSC;
+        protected global::System.Web.UI.WebControls.TextBox txtFSCsearch;
         
         /// <summary>
-        /// Button1 control.
+        /// btnFSCsearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnFSCsearch;
         
         /// <summary>
-        /// GridView1 control.
+        /// FSCview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView FSCview;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// sdsFSCview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsFSCview;
         
         /// <summary>
-        /// BSCScheduleview control.
+        /// FSCschedule control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView BSCScheduleview;
+        protected global::System.Web.UI.WebControls.GridView FSCschedule;
         
         /// <summary>
-        /// sdsBSC control.
+        /// sdsFSCschedule control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsBSC;
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsFSCschedule;
         
         /// <summary>
-        /// addbschedule control.
+        /// lblFSCRoute control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label addbschedule;
+        protected global::System.Web.UI.WebControls.Label lblFSCRoute;
         
         /// <summary>
-        /// ddlbschedule control.
+        /// ddlFSCroute control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlbschedule;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFSCroute;
         
         /// <summary>
-        /// sdsbroute control.
+        /// sdsFSCroute control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsbroute;
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsFSCroute;
         
         /// <summary>
-        /// lblbschedule control.
+        /// lblFSCweekday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblbschedule;
+        protected global::System.Web.UI.WebControls.Label lblFSCweekday;
         
         /// <summary>
-        /// ddlBSClist control.
+        /// txtFSCweekday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlBSClist;
+        protected global::System.Web.UI.WebControls.TextBox txtFSCweekday;
         
         /// <summary>
-        /// lblbschetransport control.
+        /// lblFSC control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblbschetransport;
+        protected global::System.Web.UI.WebControls.Label lblFSC;
         
         /// <summary>
-        /// dropdownbsctransport control.
+        /// ddlFSCtime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropdownbsctransport;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFSCtime;
         
         /// <summary>
-        /// sdsbscroute control.
+        /// lblFSCTransport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsbscroute;
+        protected global::System.Web.UI.WebControls.Label lblFSCTransport;
         
         /// <summary>
-        /// lblbscfare control.
+        /// ddlFSCtransport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblbscfare;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFSCtransport;
         
         /// <summary>
-        /// txtbscfare control.
+        /// sdsFSCtransport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbscfare;
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsFSCtransport;
         
         /// <summary>
-        /// lbltiem control.
+        /// lblFSCfare control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbltiem;
+        protected global::System.Web.UI.WebControls.Label lblFSCfare;
         
         /// <summary>
-        /// ddlBSCtime control.
+        /// txtFSCfare control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlBSCtime;
+        protected global::System.Web.UI.WebControls.TextBox txtFSCfare;
         
         /// <summary>
-        /// btnBSC control.
+        /// btnTSCadd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBSC;
+        protected global::System.Web.UI.WebControls.Button btnTSCadd;
         
         /// <summary>
-        /// lblbschedulesms control.
+        /// lblFSCsms control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblbschedulesms;
+        protected global::System.Web.UI.WebControls.Label lblFSCsms;
     }
 }

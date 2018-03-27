@@ -10,33 +10,29 @@ using System.Configuration;
 
 namespace EasyTransit.Admin
 {
-    public partial class AddTrainSchedule : System.Web.UI.Page
+    public partial class AddFlightSchedule : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString.ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
-            TSCView.Visible = true;
-        }
-
-        protected void btnTSCsearch_Click(object sender, EventArgs e)
-        {
-            TSCsearchgridview.Visible = true;
-            TSCView.Visible = true;
+            if (!IsPostBack)
+            {
+                FSCschedule.Visible = true;
+            }
         }
 
         protected void btnTSCadd_Click(object sender, EventArgs e)
         {
-            if(ddlTSCroute.SelectedValue=="0" || txtTSCweekday.Text=="" || ddlTSCtime.SelectedValue=="0" || ddlTSCtransport.SelectedValue == "0" || txtTSCfare.Text=="")
+            if(ddlFSCroute.SelectedValue=="0"|| txtFSCweekday.Text==""|| ddlFSCtime.SelectedValue=="0"|| ddlFSCtransport.SelectedValue=="0" || txtFSCfare.Text == "")
             {
-                lblTSCsms.ForeColor = System.Drawing.Color.Red;
-                lblTSCsms.Text = "Provide Valid Information";
+                lblFSCsms.ForeColor = System.Drawing.Color.Red;
+                lblFSCsms.Text = "Please Provide Valid Information";
             }
             else
             {
-                lblTSCsms.Text = "data saved";
+                lblFSCsms.ForeColor = System.Drawing.Color.Green;
+                lblFSCsms.Text = "Data Saved..!";
             }
         }
-
-        
     }
 }
