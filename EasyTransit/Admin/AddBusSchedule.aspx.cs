@@ -16,6 +16,7 @@ namespace EasyTransit.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             lblbschedulesms.Text = "";
+           
         }
 
         protected void btnBSC_Click(object sender, EventArgs e)
@@ -30,47 +31,35 @@ namespace EasyTransit.Admin
             else
             {
 
-                if (con.State == ConnectionState.Closed)
+                con.Open();
+                SqlCommand cmd1 = new SqlCommand();
+                cmd1.Connection = con;
+                cmd1.CommandText = "select scheduleid from Bus_schedule where weekday='" + ddlBSClist.SelectedItem.Text + "' and Transport_id = '" + dropdownbsctransport.SelectedItem.Text + "'";
+                SqlDataReader rdr = cmd1.ExecuteReader();
+                if (rdr.Read())
                 {
-                    string bscid = " ";
-                    con.Open();
-                        SqlCommand cmd1 = new SqlCommand();
-                        cmd1.Connection = con;
-                        cmd1.CommandText = "select scheduleid from Bus_schedule where weekday='"+ddlBSClist.SelectedItem.Text+"' and Transport_id = '"+dropdownbsctransport.SelectedItem.Text+"'" ;
-                         bscid = cmd1.ExecuteScalar().ToString();
-                            if(bscid==" ")
-                                    {
-                                con.Open();
-                                SqlCommand cmd = new SqlCommand();
-                                cmd.Connection = con;
-                                cmd.CommandText = "insert into Bus_schedule (routeid, weekday, time, Transport_id, fare) values(@routeid, @weekday, @time, @transport_id,@fare)";
-                                cmd.Parameters.AddWithValue("@routeid", ddlbschedule.SelectedValue);
-                                cmd.Parameters.AddWithValue("@weekday", ddlBSClist.SelectedValue);
-                                cmd.Parameters.AddWithValue("@time", ddlBSCtime.SelectedItem.Text);
-                                cmd.Parameters.AddWithValue("@transport_id", dropdownbsctransport.SelectedValue);
-                                cmd.Parameters.AddWithValue("@fare", txtbscfare.Text);
-                                cmd.ExecuteNonQuery();
-                                con.Close();
-                        //int bscid = 0;
-                        //bscid = Convert.ToInt32(rdr["scheduleid"]);
-                        //if(bscid !=0)
-                        //{
-                        //    lblbschedulesms.Text = "Choose another Schedule.";
-                        //}
-                        //else
-                        //{
-                        //    lblbschedulesms.Text = "0k.";
-                        //}
 
-                             }
-                             else
-                             {
-                                
+                    lblbschedulesms.Text = "THis day and BUS is already in Database";
+                }
 
-                                lblbschedulesms.Text = "Choose";
-                                con.Close();
+                else
+                {
 
-                             }
+                    con.Close();
+                    DoBusSchedule();
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Record Inserted Successfully...!')</script>");
+                    //int bscid = 0;
+                    //bscid = Convert.ToInt32(rdr["scheduleid"]);
+                    //if(bscid !=0)
+                    //{
+                    //    lblbschedulesms.Text = "Choose another Schedule.";
+                    //}
+                    //else
+                    //{
+                    //    lblbschedulesms.Text = "0k.";
+                    //}
+
+
                     //SqlDataReader rdr = cmd.ExecuteReader();
 
                     ////while (rdr.Read())
@@ -105,16 +94,40 @@ namespace EasyTransit.Admin
 
                 }
 
-               
-
-                Response.Redirect(Request.Url.AbsoluteUri);
-
                 //lblbschedulesms.ForeColor = System.Drawing.Color.Green;
-                //lblbschedulesms.Text = "data saved";
-                //Response.Redirect(Request.Url.AbsoluteUri);
+                //lblbschedulesms.Text = "data saved"; 
             }
         }
 
-       
+        private void DoBusSchedule()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "insert into Bus_schedule (routeid, weekday, time, Transport_id, fare) values(@routeid, @weekday, @time, @transport_id,@fare)";
+                cmd.Parameters.AddWithValue("@routeid", ddlbschedule.SelectedValue);
+                cmd.Parameters.AddWithValue("@weekday", ddlBSClist.SelectedValue);
+                cmd.Parameters.AddWithValue("@time", ddlBSCtime.SelectedItem.Text);
+                cmd.Parameters.AddWithValue("@transport_id", dropdownbsctransport.SelectedValue);
+                cmd.Parameters.AddWithValue("@fare", txtbscfare.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+              
+            }
+
+        }
+
+        protected void ddlbschedule_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnReset_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Request.Url.AbsoluteUri);
+        }
     }
 }

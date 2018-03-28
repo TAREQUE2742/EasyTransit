@@ -25,7 +25,7 @@
     <div class="container" style="background-color:#67C8B7;height:inherit;">
            
         <br />
-             <div class="col-lg-7 col-md-7 col-sm-8">
+             <div class="col-lg-8 col-md-8 col-sm-9">
                 <br />
                 <br />
                 <center><h4>Search Bus Schedule Information</h4></center>
@@ -153,7 +153,7 @@
                     </asp:SqlDataSource>
                 </center>
             </div>
-             <div class="col-lg-5 col-md-5 col-sm-4">
+             <div class="col-lg-4 col-md-4 col-sm-3">
                         <br />
                         <br />
                         <center><h4>Add Bus Schedule</h4></center>
@@ -162,7 +162,7 @@
                  <center>
                         <div class="form-group">
                         <asp:label runat="server" id="addbschedule" text="route id" font-bold="true" width="100%"></asp:label>
-                       <asp:dropdownlist runat="server" id="ddlbschedule" width="100%" AppendDataBoundItems="true" cssclass="form-control" datasourceid="sdsbroute" datatextfield="routeid" datavaluefield="routeid" AutoPostBack="True">
+                       <asp:dropdownlist runat="server" id="ddlbschedule" width="100%" AppendDataBoundItems="true" cssclass="form-control" datasourceid="sdsbroute" datatextfield="routeid" datavaluefield="routeid" AutoPostBack="True" OnSelectedIndexChanged="ddlbschedule_SelectedIndexChanged">
                            <asp:ListItem Value="0">Select Route ID</asp:ListItem>
                             </asp:dropdownlist>
                            <%-- <asp:requiredfieldvalidator runat="server" id="rfvorigin" controltovalidate="ddlbschedule"
@@ -212,13 +212,18 @@
                                     <asp:ListItem>8:00 PM</asp:ListItem>
                                     <asp:ListItem>10:00 PM</asp:ListItem>
                                 </asp:DropDownList>
+                     </center>
+                     
                              <div class="form-group" style="margin-top:25px;">
 
-                                 <asp:button  runat="server" id="btnBSC" cssclass="btn btn-primary" OnClick="btnBSC_Click" style="margin-top:35px;" text="add bus schedule" width="100%"/>
-                             <asp:label id="lblbschedulesms" runat="server" style="margin-top:35px;" width="100%" forecolor="Red"></asp:label>
+                                 <asp:button  runat="server" id="btnBSC" cssclass="btn btn-primary" OnClick="btnBSC_Click" style="margin-top:35px;float:left" text="add bus schedule" width="45%"/>&nbsp;
+                                 <asp:button  runat="server" id="btnReset" cssclass="btn btn-primary" style="margin-top:35px; float:right" text="Reset" width="45%" OnClick="btnReset_Click"/>
+
+                             <%----%>
                              </div>
-                    </center>
-                     
+                 <br />
+                    
+                    <center> <asp:label id="lblbschedulesms" runat="server" style="margin-top:35px;" width="100%" forecolor="Red"></asp:label></center>
                   </div>
         </div>
   
