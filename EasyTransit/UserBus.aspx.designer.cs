@@ -22,13 +22,22 @@ namespace EasyTransit {
         protected global::System.Web.UI.WebControls.Label lblstartingBUS;
         
         /// <summary>
-        /// txtstartingBUS control.
+        /// ddlOrigin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtstartingBUS;
+        protected global::System.Web.UI.WebControls.DropDownList ddlOrigin;
+        
+        /// <summary>
+        /// sdsOrigin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsOrigin;
         
         /// <summary>
         /// lbldestinationBUS control.
@@ -40,12 +49,66 @@ namespace EasyTransit {
         protected global::System.Web.UI.WebControls.Label lbldestinationBUS;
         
         /// <summary>
-        /// txtdetinationBUS control.
+        /// ddlDestination control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdetinationBUS;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDestination;
+        
+        /// <summary>
+        /// sdsDestination control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsDestination;
+        
+        /// <summary>
+        /// lbljurDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbljurDate;
+        
+        /// <summary>
+        /// txtjourneyDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtjourneyDate;
+        
+        /// <summary>
+        /// btnBUSsearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBUSsearch;
+        
+        /// <summary>
+        /// lblbusSearchsms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblbusSearchsms;
+        
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

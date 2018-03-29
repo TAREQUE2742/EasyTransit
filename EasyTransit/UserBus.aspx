@@ -8,23 +8,42 @@
      
     <center>
       <div class="form-group">
-          <asp:Label ID="lblstartingBUS" runat="server" Width="100%" style="font-size:17px;">Starting Place:</asp:Label>
-          <input type="search" class="form-control" id="exampleFormControlInput1"  style="margin-left:452px;" />
-          <asp:TextBox ID="txtstartingBUS" placeholder="Where we can pick-up you?" CssClass="form-control" Width="100%" runat="server"></asp:TextBox>
+          <asp:Label ID="lblstartingBUS" runat="server" Width="100%" style="font-size:17px;">Starting Place:</asp:Label>  
+
+          <asp:DropDownList ID="ddlOrigin" runat="server" AppendDataBoundItems="True" CssClass="form-control" Width="100%" DataSourceID="sdsOrigin" DataTextField="origin" DataValueField="origin">
+              <asp:ListItem Value="0">Select Origin</asp:ListItem>
+          </asp:DropDownList>
+          <asp:SqlDataSource ID="sdsOrigin" runat="server" ConnectionString="<%$ ConnectionStrings:mycon %>" SelectCommand="SELECT DISTINCT origin FROM Bus_routes"></asp:SqlDataSource>
+          <br />
+         
+          <br />
       </div>
       <div class="form-group">
           <asp:Label ID="lbldestinationBUS" runat="server" Width="100%" style="font-size:17px;">Destination Place:</asp:Label>
-          <input type="search" class="form-control" id="exampleFormControlInput2" placeholder="Where do you go?" style="margin-left:452px;" />
-          <asp:TextBox runat="server" ID="txtdetinationBUS" placeholder="Where do you go?" Width="100%" ></asp:TextBox>
+           <asp:DropDownList ID="ddlDestination" runat="server" AppendDataBoundItems="True" CssClass="form-control" DataSourceID="sdsDestination" DataTextField="destination" DataValueField="destination" Width="100%">
+              <asp:ListItem Value="0">Select Destination</asp:ListItem>
+          </asp:DropDownList>
+          <asp:SqlDataSource ID="sdsDestination" runat="server" ConnectionString="<%$ ConnectionStrings:mycon %>" SelectCommand="SELECT DISTINCT destination FROM Bus_routes ORDER BY destination"></asp:SqlDataSource>
+          <br />
+         
       </div>
        <div class="form-group">
-          <label for="exampleFormControlSelect1" style="font-size:17px;">Pick a Journey Date:</label>
-          <input type="date" class="form-control" id="exampleFormControlSelect1"style="margin-left:452px;" />
+          <asp:Label ID="lbljurDate" runat="server" style="font-size:17px;">Pick a Journey Date:</asp:Label>
+           <asp:TextBox runat="server" ID="txtjourneyDate" CssClass="form-control" Width="100%" type="date" OnTextChanged="txtjourneyDate_TextChanged"></asp:TextBox>
       </div>
-      <button class="btn btn-primary">Search</button>
+        <br />
+      <asp:Button runat="server" ID="btnBUSsearch" CssClass="btn btn-primary" Width="100%" Text="Search Bus" OnClick="btnBUSsearch_Click" />
+        </center>
+          <br />
+          <asp:Label ID="lblbusSearchsms" runat="server" Width="100%"></asp:Label>
+          <br />
       </div>
+       
       <div class="col-lg-6 col-md-6 col-sm-4">
-          </center>
+         
+          <br />
+          d<asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+         
       </div>
   </div>
 </asp:Content>
