@@ -29,7 +29,7 @@
       </div>
        <div class="form-group">
           <asp:Label ID="lbljurDate" runat="server" style="font-size:17px;">Pick a Journey Date:</asp:Label>
-           <asp:TextBox runat="server" ID="txtjourneyDate" CssClass="form-control" Width="100%" type="date" OnTextChanged="txtjourneyDate_TextChanged"></asp:TextBox>
+           <asp:TextBox runat="server" ID="txtjourneyDate" CssClass="form-control" Width="100%" TextMode="date" OnTextChanged="txtjourneyDate_TextChanged"></asp:TextBox>
       </div>
         <br />
       <asp:Button runat="server" ID="btnBUSsearch" CssClass="btn btn-primary" Width="100%" Text="Search Bus" OnClick="btnBUSsearch_Click" />

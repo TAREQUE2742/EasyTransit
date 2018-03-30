@@ -30,26 +30,43 @@ namespace EasyTransit.Admin
             }
             else
             {
-                if(con.State == ConnectionState.Closed)
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select routeid from Bus_routes where origin='"+txtaddbroute.Text+"' and destination='"+txtbdestination.Text+"'";
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = con;
-                    cmd.CommandText = "insert into Bus_routes (origin, destination,Transport_id) values(@origin, @destination,@Transport_id)";
-                    cmd.Parameters.AddWithValue("@origin",txtaddbroute.Text);
-                    cmd.Parameters.AddWithValue("@destination", txtbdestination.Text);
-                    cmd.Parameters.AddWithValue("@Transport_id",dropdowntransport.SelectedValue);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    lblroutesms.Text = "Data Recorded..!";
-
-                    txtaddbroute.Text = "";
-                    txtbdestination.Text = "";
-                    dropdowntransport.SelectedIndex = 0;
-
-                    Response.Redirect(Request.RawUrl);
-
+                    lblroutesms.ForeColor = System.Drawing.Color.Yellow;
+                    lblroutesms.Font.Bold = true;
+                    lblroutesms.Text = "This Route is Already Assign In Route Table.";
                 }
+                else
+                {
+                    con.Close();
+                    AddBusRoute();
+                }
+            }
+        }
+        private void AddBusRoute()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "insert into Bus_routes (origin, destination) values(@origin, @destination)";
+                cmd.Parameters.AddWithValue("@origin", txtaddbroute.Text);
+                cmd.Parameters.AddWithValue("@destination", txtbdestination.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                lblroutesms.Text = "Data Recorded..!";
+
+                txtaddbroute.Text = "";
+                txtbdestination.Text = "";
+
+                Response.Redirect(Request.RawUrl);
+
             }
         }
     }

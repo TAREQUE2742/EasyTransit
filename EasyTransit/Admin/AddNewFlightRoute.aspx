@@ -2,8 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="background-color:skyblue;height:600px;">
-        <div class="row">
+    <div class="container" style="background-color:skyblue;height:auto;">
             <div class="col-lg-4 col-md-3 col-sm-3">
                 <br />
                 <br />
@@ -16,26 +15,22 @@
                     <asp:RequiredFieldValidator runat="server" ID="rfvorigin" ControlToValidate="txtaddFroute"
                          ErrorMessage="Provide Origin Place" InitialValue="" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
+                <br />
                 <div class="form-group"  Style="margin-top:10px;">
                     <asp:Label runat="server" ID="lblFroute" Font-Bold="true" Text="Destination Airport " Style="margin-top:20px;" Width="100%"></asp:Label>
                     <asp:TextBox runat="server" ID="txtFdestination" CssClass="form-control" placeholder="Provide Destination Place" Width="100%"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ID="rfvdestination" ControlToValidate="txtFdestination"
                          ErrorMessage="Provide Destination" InitialValue="" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
+                <br />
                  <div class="form-group"  Style="margin-top:10px;">
-                    <asp:Label runat="server" ID="lblFtransport" Font-Bold="true" Text="Choose Transport ID " Style="margin-top:35px;"  Width="100%"></asp:Label>
-                    <asp:DropDownList runat="server" CssClass="form-control" AppendDataBoundItems="True" ID="dropdownFtransport" Width="100%" DataSourceID="sdsFroute" DataTextField="flight_id" DataValueField="flight_id" >
-                        <asp:ListItem Value="0">Select Flight ID</asp:ListItem>
-                     </asp:DropDownList>
-                     <asp:SqlDataSource runat="server" ID="sdsFroute" ConnectionString="<%$ ConnectionStrings:mycon %>" 
-                         SelectCommand="SELECT [flight_id] FROM [flight_details]"></asp:SqlDataSource>
-                      <asp:RequiredFieldValidator runat="server" ID="rfvFtransport" ErrorMessage="Please Select Transport ID"
-                         ControlToValidate="dropdownFtransport"  InitialValue="0" ForeColor="Red"></asp:RequiredFieldValidator>
 
                      <asp:Button  runat="server" ID="btnFroute" CssClass="btn btn-primary" Text="Add Flight Route" Width="100%" OnClick="btnFroute_Click"/>
                      <asp:Label ID="lblFroutesms" runat="server" Width="100%" ForeColor="Green"></asp:Label>
                      </div>
+                <br />
           </div>
+        <br />
              <div class="col-lg-8 col-md-9 col-sm-9">
                 <br />
                 <br />
@@ -46,7 +41,7 @@
                     <asp:GridView runat="server" ID="GridViewFlight" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataKeyNames="routeid" DataSourceID="sdsFroute2" ForeColor="Black" GridLines="Vertical">
                         <AlternatingRowStyle BackColor="#CCCCCC" />
                         <Columns>
-                            <asp:TemplateField HeaderText="Route ID" InsertVisible="False" SortExpression="routeid">
+                            <asp:TemplateField HeaderText="routeid" InsertVisible="False" SortExpression="routeid">
                                 <EditItemTemplate>
                                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("routeid") %>'></asp:Label>
                                 </EditItemTemplate>
@@ -54,7 +49,7 @@
                                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("routeid") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Origin" SortExpression="origin">
+                            <asp:TemplateField HeaderText="origin" SortExpression="origin">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("origin") %>'></asp:TextBox>
                                 </EditItemTemplate>
@@ -62,20 +57,12 @@
                                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("origin") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Destination" SortExpression="destination">
+                            <asp:TemplateField HeaderText="destination" SortExpression="destination">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("destination") %>'></asp:TextBox>
                                 </EditItemTemplate>
                                 <ItemTemplate>
                                     <asp:Label ID="Label3" runat="server" Text='<%# Bind("destination") %>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Transport ID" SortExpression="Transport_id">
-                                <EditItemTemplate>
-                                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Transport_id") %>'></asp:TextBox>
-                                </EditItemTemplate>
-                                <ItemTemplate>
-                                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("Transport_id") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Actions" ShowHeader="False">
@@ -99,25 +86,21 @@
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
-                    <asp:SqlDataSource runat="server" ID="sdsFroute2" ConnectionString="<%$ ConnectionStrings:mycon %>" DeleteCommand="DELETE FROM [Flight_routes] WHERE [routeid] = @routeid" InsertCommand="INSERT INTO [Flight_routes] ([origin], [destination], [Transport_id]) VALUES (@origin, @destination, @Transport_id)" SelectCommand="SELECT * FROM [Flight_routes] ORDER BY [Transport_id]" UpdateCommand="UPDATE [Flight_routes] SET [origin] = @origin, [destination] = @destination, [Transport_id] = @Transport_id WHERE [routeid] = @routeid">
+                    <asp:SqlDataSource runat="server" ID="sdsFroute2" ConnectionString="<%$ ConnectionStrings:mycon %>" DeleteCommand="DELETE FROM [Flight_routes] WHERE [routeid] = @routeid" InsertCommand="INSERT INTO [Flight_routes] ([origin], [destination]) VALUES (@origin, @destination)" SelectCommand="SELECT * FROM [Flight_routes] ORDER BY [origin], [destination]" UpdateCommand="UPDATE [Flight_routes] SET [origin] = @origin, [destination] = @destination WHERE [routeid] = @routeid">
                         <DeleteParameters>
                             <asp:Parameter Name="routeid" Type="Int32" />
                         </DeleteParameters>
                         <InsertParameters>
                             <asp:Parameter Name="origin" Type="String" />
                             <asp:Parameter Name="destination" Type="String" />
-                            <asp:Parameter Name="Transport_id" Type="String" />
                         </InsertParameters>
                         <UpdateParameters>
                             <asp:Parameter Name="origin" Type="String" />
                             <asp:Parameter Name="destination" Type="String" />
-                            <asp:Parameter Name="Transport_id" Type="String" />
                             <asp:Parameter Name="routeid" Type="Int32" />
                         </UpdateParameters>
                     </asp:SqlDataSource>
                 </center>
             </div>
-
-       </div>
 </div>
 </asp:Content>

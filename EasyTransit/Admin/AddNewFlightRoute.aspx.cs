@@ -30,26 +30,45 @@ namespace EasyTransit.Admin
             }
             else
             {
-                if (con.State == ConnectionState.Closed)
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select routeid from Flight_routes where origin ='"+txtaddFroute.Text+"' and destination='"+txtFdestination.Text+"' ";
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if(rdr.Read())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = con;
-                    cmd.CommandText = "insert into Flight_routes (origin, destination,Transport_id) values(@origin, @destination,@Transport_id)";
-                    cmd.Parameters.AddWithValue("@origin", txtaddFroute.Text);
-                    cmd.Parameters.AddWithValue("@destination", txtFdestination.Text);
-                    cmd.Parameters.AddWithValue("@Transport_id", dropdownFtransport.SelectedValue);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    lblFroutesms.Text = "Data Recorded..!";
-
-                    txtaddFroute.Text = "";
-                    txtFdestination.Text = "";
-                    dropdownFtransport.SelectedIndex = 0;
-
-                    Response.Redirect(Request.RawUrl);
-
+                    lblFroutesms.ForeColor = System.Drawing.Color.Yellow;
+                    lblFroutesms.Font.Bold = true;
+                    lblFroutesms.Text = "This Route Already Assign in Route Table.";
                 }
+                else
+                {
+                    con.Close();
+                    AddFlightRoute();
+                }
+
+            }
+        }
+
+        private void AddFlightRoute()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "insert into Flight_routes (origin, destination) values(@origin, @destination)";
+                cmd.Parameters.AddWithValue("@origin", txtaddFroute.Text);
+                cmd.Parameters.AddWithValue("@destination", txtFdestination.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                lblFroutesms.Text = "Data Recorded..!";
+
+                txtaddFroute.Text = "";
+                txtFdestination.Text = "";
+
+                Response.Redirect(Request.RawUrl);
+
             }
         }
     }

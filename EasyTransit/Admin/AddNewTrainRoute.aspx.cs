@@ -30,26 +30,43 @@ namespace EasyTransit.Admin
             }
             else
             {
-                if (con.State == ConnectionState.Closed)
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select routeid from Train_routes where origin='"+txtaddTroute.Text+"' and destination='"+txtTdestination.Text+"'";
+                SqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = con;
-                    cmd.CommandText = "insert into Train_routes (origin, destination,Transport_id) values(@origin, @destination,@Transport_id)";
-                    cmd.Parameters.AddWithValue("@origin", txtaddTroute.Text);
-                    cmd.Parameters.AddWithValue("@destination", txtTdestination.Text);
-                    cmd.Parameters.AddWithValue("@Transport_id", dropdownTtransport.SelectedValue);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    lblTroutesms.Text = "Data Recorded..!";
-
-                    txtaddTroute.Text = "";
-                    txtTdestination.Text = "";
-                    dropdownTtransport.SelectedIndex = 0;
-
-                    Response.Redirect(Request.RawUrl);
-
+                    lblTroutesms.ForeColor = System.Drawing.Color.Yellow;
+                    lblTroutesms.Font.Bold = true;
+                    lblTroutesms.Text = "This Route Already Assign In Route Table.";
                 }
+                else
+                {
+                    con.Close();
+                    AddTrainRoute();
+                }
+            }
+        }
+        private void AddTrainRoute()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "insert into Train_routes (origin, destination) values(@origin, @destination)";
+                cmd.Parameters.AddWithValue("@origin", txtaddTroute.Text);
+                cmd.Parameters.AddWithValue("@destination", txtTdestination.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                lblTroutesms.Text = "Data Recorded..!";
+
+                txtaddTroute.Text = "";
+                txtTdestination.Text = "";
+
+                Response.Redirect(Request.RawUrl);
+
             }
         }
     }

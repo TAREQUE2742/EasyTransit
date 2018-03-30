@@ -12,20 +12,20 @@ namespace EasyTransit
 {
     public partial class UserBus : System.Web.UI.Page
     {
+        string Day;
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString.ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
-
+                txtjourneyDate.Attributes["min"] = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
 
         protected void btnBUSsearch_Click(object sender, EventArgs e)
         {
 
-            //string a = Convert.ToString(ddlOrigin.Text);
-            //string b = Convert.ToString(ddlDestination.Text);
+            //
 
 
             //lblbusSearchsms.Text = a+b;
@@ -40,32 +40,46 @@ namespace EasyTransit
                if(ddlOrigin.SelectedValue=="0" || ddlDestination.SelectedValue=="0" || txtjourneyDate.Text=="")
                 {
                     lblbusSearchsms.ForeColor = System.Drawing.Color.Red;
+                    lblbusSearchsms.Font.Bold = true;
                     lblbusSearchsms.Text = "Provide Valid Information";
                 }
                 else
                 {
-                   string Day = Convert.ToDateTime(txtjourneyDate.Text).DayOfWeek.ToString();
-               
-                    if (con.State==ConnectionState.Closed)
-                    {
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand();
-                        cmd.Connection = con;
-                        cmd.CommandText = "SELECT origin,destination,Transport_id,bcompany_name, weekday from Bus_routes,Bus_schedule,Bus_company  where weekday ='" + Day + "' and origin='" + ddlOrigin.SelectedItem.Text + "' and destination='" + ddlDestination.SelectedItem.Text + "' ";
-                        SqlDataReader rdr = cmd.ExecuteReader();
-                        if(rdr.Read())
-                        {
-                            lblbusSearchsms.Text = Day;
-                            con.Close();
+                    Session["JourneyDate"] = txtjourneyDate.Text;
+                    Day = Convert.ToDateTime(txtjourneyDate.Text).DayOfWeek.ToString();
 
-                        }
-                        else
-                        {
-                            lblbusSearchsms.Text = Day+" "+"Not available";
-                        }
-                        con.Close();
-                    }
+                    DoBusSearch();
+                   
                 }
+            }
+        }
+
+        private void DoBusSearch()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "SELECT routeid from Bus_routes where origin='" + ddlOrigin.SelectedItem.Text + "' and destination='" + ddlDestination.SelectedItem.Text + "' ";
+                SqlDataReader rdr = cmd.ExecuteReader();              
+                if (rdr.Read())
+                {
+                    string route = Convert.ToString(rdr["routeid"]);
+                    string Ori = Convert.ToString(ddlOrigin.Text);
+                    string Desti = Convert.ToString(ddlDestination.Text);
+                    Session["route"] = route;
+                    Session["day"] = Day;
+                    Session["Ori"] = Ori;
+                    Session["Desti"] = Desti;
+                    Response.Redirect("UserSearch.aspx");
+                   
+                }
+                else
+                {
+                    lblbusSearchsms.Text ="This Route is not available";
+                }
+                con.Close();
             }
         }
 

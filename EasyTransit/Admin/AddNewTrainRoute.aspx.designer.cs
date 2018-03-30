@@ -67,42 +67,6 @@ namespace EasyTransit.Admin {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvdestination;
         
         /// <summary>
-        /// lblTtransport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTtransport;
-        
-        /// <summary>
-        /// dropdownTtransport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropdownTtransport;
-        
-        /// <summary>
-        /// sdsTdrop control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsTdrop;
-        
-        /// <summary>
-        /// rfvTtransport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTtransport;
-        
-        /// <summary>
         /// btnTroute control.
         /// </summary>
         /// <remarks>
