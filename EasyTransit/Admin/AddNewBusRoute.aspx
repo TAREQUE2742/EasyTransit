@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="background-color:skyblue;height:auto;">
+    <div class="container" style="background-color:#67C8B7;height:auto;">
             <div class="col-lg-4 col-md-3 col-sm-3">
                 <br />
                 <br />
@@ -12,15 +12,11 @@
                 <div class="form-group">
                 <asp:Label runat="server" ID="addbroute" Text="Origin Place" Font-Bold="true" Width="100%"></asp:Label>
                 <asp:TextBox runat="server" ID="txtaddbroute" CssClass="form-control" placeholder="Provide Origin Place" Width="100%"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" ID="rfvorigin" ControlToValidate="txtaddbroute"
-                         ErrorMessage="Provide Origin Place" InitialValue="" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                 <br />
                 <div class="form-group"  Style="margin-top:10px;">
                     <asp:Label runat="server" ID="lblbroute" Font-Bold="true" Text="Destination Place " Style="margin-top:20px;" Width="100%"></asp:Label>
                     <asp:TextBox runat="server" ID="txtbdestination" CssClass="form-control" placeholder="Provide Destination Place" Width="100%"></asp:TextBox>
-                    <asp:RequiredFieldValidator runat="server" ID="rfvdestination" ControlToValidate="txtbdestination"
-                         ErrorMessage="Provide Destination" InitialValue="" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
                 <br />
                  <div class="form-group"  Style="margin-top:10px;">

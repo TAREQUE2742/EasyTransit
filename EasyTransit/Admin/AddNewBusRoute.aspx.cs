@@ -26,26 +26,38 @@ namespace EasyTransit.Admin
         {
             if(txtaddbroute.Text==""|| txtbdestination.Text == "")
             {
+                lblroutesms.ForeColor = System.Drawing.Color.Yellow;
+                lblroutesms.Font.Bold = true;
                 lblroutesms.Text = "Invalid Route Info";
             }
             else
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select routeid from Bus_routes where origin='"+txtaddbroute.Text+"' and destination='"+txtbdestination.Text+"'";
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.Read())
+                if (txtaddbroute.Text == txtbdestination.Text)
                 {
                     lblroutesms.ForeColor = System.Drawing.Color.Yellow;
                     lblroutesms.Font.Bold = true;
-                    lblroutesms.Text = "This Route is Already Assign In Route Table.";
+                    lblroutesms.Text = "The Origin and Destination must not Same.!";
                 }
                 else
                 {
-                    con.Close();
-                    AddBusRoute();
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    cmd.CommandText = "select routeid from Bus_routes where origin='" + txtaddbroute.Text + "' and destination='" + txtbdestination.Text + "'";
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.Read())
+                    {
+                        lblroutesms.ForeColor = System.Drawing.Color.Yellow;
+                        lblroutesms.Font.Bold = true;
+                        lblroutesms.Text = "This Route is Already Assign In Route Table.";
+                    }
+                    else
+                    {
+                        con.Close();
+                        AddBusRoute();
+                    }
                 }
+               
             }
         }
         private void AddBusRoute()

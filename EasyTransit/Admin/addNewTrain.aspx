@@ -21,7 +21,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="position:relative;background-color:#00778A;padding:0px;">
+    <div class="container" style="position:relative;background-color:#67C8B7;padding:0px;">
         <div class="ad-Bus" style="border-radius:30px;">
             <div class="Bus-header" style="border-radius:30px;">Add New Train Informations</div>
             <div class="Bus-body" style="position:center;">

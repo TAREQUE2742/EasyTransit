@@ -24,7 +24,8 @@ namespace EasyTransit.Admin
             lblbschedulesms.Text = "";
             if(txtbscfare.Text=="" || ddlBSClist.SelectedValue=="0" || ddlbschedule.SelectedValue=="0" || dropdownbsctransport.SelectedValue=="0" || ddlBSCtime.SelectedValue=="0")
             {
-                lblbschedulesms.ForeColor = System.Drawing.Color.Red;
+                lblbschedulesms.ForeColor = System.Drawing.Color.Yellow;
+                lblbschedulesms.Font.Bold=true;
                 lblbschedulesms.Text = "Please Provide valid Information";
                 
             }
@@ -38,8 +39,10 @@ namespace EasyTransit.Admin
                 SqlDataReader rdr = cmd1.ExecuteReader();
                 if (rdr.Read())
                 {
+                    lblbschedulesms.ForeColor = System.Drawing.Color.Yellow;
+                    lblbschedulesms.Font.Bold = true;
 
-                    lblbschedulesms.Text = "THis day and BUS is already in Database";
+                    lblbschedulesms.Text = "This Bus Already Have a Schedule.";
                 }
 
                 else

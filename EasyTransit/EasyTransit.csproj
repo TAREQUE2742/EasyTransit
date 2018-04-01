@@ -144,6 +144,7 @@
     <Content Include="Admin\Contents\jquery.mCustomScrollbar.min.css" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\image\back.jpg" />
+    <Content Include="Admin\image\busShohag.jpg" />
     <Content Include="Admin\image\cancel.png" />
     <Content Include="Admin\image\delete.png" />
     <Content Include="Admin\image\edit.png" />
@@ -206,6 +207,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Admin\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="images\BusShohag-sm.jpg" />
+    <Content Include="images\busShohag.jpg" />
     <Content Include="RUser.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\airplane.jpg" />

@@ -15,9 +15,9 @@
                 </div>
             </div>
             <div data-p="170.00">
-                <img data-u="image" src="images/slider2.jpg" />
+                <img data-u="image" src="images/busShohag.jpg" />
                 <div data-u="thumb">
-                    <img data-u="thumb" class="i" src="images/slider2-sm.jpg" />
+                    <img data-u="thumb" class="i" src="images/BusShohag-sm.jpg" />
                   
                 </div>
             </div>

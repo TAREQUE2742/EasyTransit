@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
         <div class="container" style="padding:0px;">
-                <div style="text-align:center;height:auto;padding:9px;background-color:teal; ">
+                <div style="text-align:center;height:auto;padding:9px;background-color:#67C8B7; ">
 
                         <h2 style="color:white;">Reservation Details Information</h2>
                     </div>

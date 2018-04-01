@@ -33,17 +33,16 @@
                 <br />
                 <center>
                     <br />
-                    <asp:TextBox ID="txtsearchBSC" runat="server" CssClass="form-control" Width="100%"></asp:TextBox>
+                    <asp:TextBox ID="txtsearchBSC" runat="server" CssClass="form-control" placeholder="Search Bus Routes By Giving the Origin Or Destination Place" Width="100%"></asp:TextBox>
                     <br />
                     <asp:Button ID="Button1" runat="server" Text="Search Bus Route" CssClass="btn btn-primary" Width="100%" />
                     <br />
                     <br />
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="routeid" DataSourceID="SqlDataSource1">
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="routeid" DataSourceID="SqlDataSource1" Width="95%">
                         <Columns>
-                            <asp:BoundField DataField="routeid" HeaderText="routeid" InsertVisible="False" ReadOnly="True" SortExpression="routeid" />
-                            <asp:BoundField DataField="origin" HeaderText="origin" SortExpression="origin" />
-                            <asp:BoundField DataField="destination" HeaderText="destination" SortExpression="destination" />
-                            <asp:BoundField DataField="Transport_id" HeaderText="Transport_id" SortExpression="Transport_id" />
+                            <asp:BoundField DataField="routeid" HeaderText="Route ID" InsertVisible="False" ReadOnly="True" SortExpression="routeid" />
+                            <asp:BoundField DataField="origin" HeaderText="Origin " SortExpression="origin" />
+                            <asp:BoundField DataField="destination" HeaderText="Destination" SortExpression="destination" />
                         </Columns>
                         <FooterStyle BackColor="White" ForeColor="#000066" />
                         <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -56,7 +55,7 @@
                         <SortedDescendingHeaderStyle BackColor="#00547E" />
                     </asp:GridView>
                     <br />
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:mycon %>" SelectCommand="SELECT routeid, origin, destination, Transport_id FROM Bus_routes WHERE (origin LIKE '%' + @origin + '%') OR (destination LIKE '%' + @destination + '%')">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:mycon %>" SelectCommand="SELECT routeid, origin, destination FROM Bus_routes WHERE (origin LIKE '%' + @origin + '%') OR (destination LIKE '%' + @destination + '%')">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="txtsearchBSC" Name="origin" PropertyName="Text" />
                             <asp:ControlParameter ControlID="txtsearchBSC" Name="destination" PropertyName="Text" />
@@ -162,7 +161,7 @@
                  <center>
                         <div class="form-group">
                         <asp:label runat="server" id="addbschedule" text="route id" font-bold="true" width="100%"></asp:label>
-                       <asp:dropdownlist runat="server" id="ddlbschedule" width="100%" AppendDataBoundItems="true" cssclass="form-control" datasourceid="sdsbroute" datatextfield="routeid" datavaluefield="routeid" AutoPostBack="True" OnSelectedIndexChanged="ddlbschedule_SelectedIndexChanged">
+                       <asp:dropdownlist runat="server" id="ddlbschedule" width="100%" AppendDataBoundItems="true" cssclass="form-control" datasourceid="sdsbroute" datatextfield="routeid" datavaluefield="routeid" OnSelectedIndexChanged="ddlbschedule_SelectedIndexChanged">
                            <asp:ListItem Value="0">Select Route ID</asp:ListItem>
                             </asp:dropdownlist>
                            <%-- <asp:requiredfieldvalidator runat="server" id="rfvorigin" controltovalidate="ddlbschedule"

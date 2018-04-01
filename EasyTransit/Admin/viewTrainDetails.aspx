@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="container" style="padding:0px;background-color:#67C8B7;">
-        <div style="text-align:center;height:auto;padding:9px;background-color:teal;width:auto; ">
+        <div style="text-align:center;height:auto;padding:9px;background-color:#67C8B7;width:auto; ">
 
                 <h2 style="color:white;">Train Details Information</h2>
             </div>

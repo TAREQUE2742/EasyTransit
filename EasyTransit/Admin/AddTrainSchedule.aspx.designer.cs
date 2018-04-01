@@ -103,13 +103,13 @@ namespace EasyTransit.Admin {
         protected global::System.Web.UI.WebControls.Label lblTSCweekday;
         
         /// <summary>
-        /// txtTSCweekday control.
+        /// ddlTSCweekday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTSCweekday;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTSCweekday;
         
         /// <summary>
         /// lblTSC control.
@@ -182,6 +182,15 @@ namespace EasyTransit.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnTSCadd;
+        
+        /// <summary>
+        /// btnReset control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReset;
         
         /// <summary>
         /// lblTSCsms control.

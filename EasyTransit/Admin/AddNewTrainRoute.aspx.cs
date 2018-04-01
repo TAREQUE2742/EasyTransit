@@ -30,22 +30,32 @@ namespace EasyTransit.Admin
             }
             else
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select routeid from Train_routes where origin='"+txtaddTroute.Text+"' and destination='"+txtTdestination.Text+"'";
-                SqlDataReader rdr = cmd.ExecuteReader();
-                if (rdr.Read())
+                if (txtaddTroute.Text == txtTdestination.Text)
                 {
-                    lblTroutesms.ForeColor = System.Drawing.Color.Yellow;
+                    lblTroutesms.ForeColor = System.Drawing.Color.Black;
                     lblTroutesms.Font.Bold = true;
-                    lblTroutesms.Text = "This Route Already Assign In Route Table.";
+                    lblTroutesms.Text = "Origin and Destination Must be Different.";
+
                 }
-                else
-                {
-                    con.Close();
-                    AddTrainRoute();
+              else {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    cmd.CommandText = "select routeid from Train_routes where origin='"+txtaddTroute.Text+"' and destination='"+txtTdestination.Text+"'";
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.Read())
+                    {
+                        lblTroutesms.ForeColor = System.Drawing.Color.Yellow;
+                        lblTroutesms.Font.Bold = true;
+                        lblTroutesms.Text = "This Route Already Assign In Route Table.";
+                    }
+                    else
+                    {
+                        con.Close();
+                        AddTrainRoute();
+                    }
                 }
+
             }
         }
         private void AddTrainRoute()

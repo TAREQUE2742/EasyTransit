@@ -21,8 +21,8 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="background-color:cadetblue">
-        <div class="col-lg-7 col-md-7 col-sm-6">
+    <div class="container" style="background-color:#67C8B7">
+        <div class="col-lg-8 col-md-8 col-sm-9">
             <br />
             <center><h4>Search Train Route By there Origin OR Destination Station</h4></center>
             <br />
@@ -34,10 +34,9 @@
             <asp:GridView ID="TSCsearchgridview" runat="server" Width="100%" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="routeid" DataSourceID="sdsTSCsearch" ForeColor="#333333" GridLines="None">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField DataField="routeid" HeaderText="Route ID" InsertVisible="False" ReadOnly="True" SortExpression="routeid" />
-                    <asp:BoundField DataField="origin" HeaderText="Origin Station" SortExpression="origin" />
-                    <asp:BoundField DataField="destination" HeaderText="Destination Station" SortExpression="destination" />
-                    <asp:BoundField DataField="Transport_id" HeaderText="Transport ID" SortExpression="Transport_id" />
+                    <asp:BoundField DataField="routeid" HeaderText="routeid" InsertVisible="False" ReadOnly="True" SortExpression="routeid" />
+                    <asp:BoundField DataField="origin" HeaderText="origin" SortExpression="origin" />
+                    <asp:BoundField DataField="destination" HeaderText="destination" SortExpression="destination" />
                 </Columns>
                 <EditRowStyle BackColor="#7C6F57" />
                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -50,11 +49,23 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
-            <asp:SqlDataSource runat="server" ID="sdsTSCsearch" ConnectionString="<%$ ConnectionStrings:mycon %>" SelectCommand="SELECT routeid, origin, destination, Transport_id FROM Train_routes WHERE (origin LIKE '%' + @origin + '%') OR (destination LIKE '%' + @destination + '%')">
+            <asp:SqlDataSource runat="server" ID="sdsTSCsearch" ConnectionString="<%$ ConnectionStrings:mycon %>" SelectCommand="SELECT routeid, origin, destination FROM Train_routes WHERE (origin LIKE '%' + @origin + '%') OR (destination LIKE '%' + @destination + '%') ORDER BY origin, destination" DeleteCommand="DELETE FROM [Train_routes] WHERE [routeid] = @routeid" InsertCommand="INSERT INTO [Train_routes] ([origin], [destination]) VALUES (@origin, @destination)" UpdateCommand="UPDATE [Train_routes] SET [origin] = @origin, [destination] = @destination WHERE [routeid] = @routeid">
+                <DeleteParameters>
+                    <asp:Parameter Name="routeid" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="origin" Type="String" />
+                    <asp:Parameter Name="destination" Type="String" />
+                </InsertParameters>
                 <SelectParameters>
                     <asp:ControlParameter ControlID="txtTSCsearch" Name="origin" PropertyName="Text" />
                     <asp:ControlParameter ControlID="txtTSCsearch" Name="destination" PropertyName="Text" />
                 </SelectParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="origin" Type="String" />
+                    <asp:Parameter Name="destination" Type="String" />
+                    <asp:Parameter Name="routeid" Type="Int32" />
+                </UpdateParameters>
             </asp:SqlDataSource>
             <br />
             <center><h4>View Train Schedule</h4></center>
@@ -152,20 +163,29 @@
                 </UpdateParameters>
             </asp:SqlDataSource>
         </div>
-        <div class="col-lg-5 col-md-5 col-sm-6">
+        <div class="col-lg-4 col-md-4 col-sm-3">
             <br />
             <center><h4>Add New Train Schedule</h4></center>
             <br />
-             <asp:Label ID="lblTSCRoute" runat="server" Text="Assign Route ID" Width="100%"></asp:Label>
+             <asp:Label ID="lblTSCRoute" runat="server" Text="Assign Route ID" Width="100%" Font-Bold="True"></asp:Label>
                 <asp:DropDownList ID="ddlTSCroute" runat="server" CssClass="form-control" Width="100%" DataSourceID="sdsTSCroute" DataTextField="routeid" DataValueField="routeid">
                     <asp:ListItem Value="0">Select Train Route</asp:ListItem>
             </asp:DropDownList>
                 <asp:SqlDataSource ID="sdsTSCroute" runat="server" ConnectionString="<%$ ConnectionStrings:mycon %>" SelectCommand="SELECT [routeid] FROM [Train_routes]"></asp:SqlDataSource>
             <br />
-            <asp:Label ID="lblTSCweekday" runat="server" Text="Assign Weekday" Width="100%"></asp:Label>
-            <asp:TextBox ID="txtTSCweekday" type="date" CssClass="form-control" Width="100%" runat="server"></asp:TextBox>
+            <asp:Label ID="lblTSCweekday" runat="server" Text="Assign Weekday" Width="100%" Font-Bold="True"></asp:Label>
+            <asp:DropDownList ID="ddlTSCweekday" CssClass="form-control" Width="100%" runat="server">
+                <asp:ListItem Value="0">Select Schedule Day</asp:ListItem>
+                <asp:ListItem>Saturday</asp:ListItem>
+                <asp:ListItem>Sunday</asp:ListItem>
+                <asp:ListItem>Monday</asp:ListItem>
+                <asp:ListItem>Tuesday</asp:ListItem>
+                <asp:ListItem>Wednesday</asp:ListItem>
+                <asp:ListItem>Thursday</asp:ListItem>
+                <asp:ListItem>Friday</asp:ListItem>
+            </asp:DropDownList>
                <br />
-            <asp:Label ID="lblTSC" runat="server" Text="Assign Time" Width="100%"></asp:Label>
+            <asp:Label ID="lblTSC" runat="server" Text="Assign Time" Width="100%" Font-Bold="True"></asp:Label>
             <asp:DropDownList ID="ddlTSCtime" CssClass="form-control" Width="100%" runat="server">
                 <asp:ListItem Value="0">Select Train Time</asp:ListItem>
                 <asp:ListItem>7:00 AM</asp:ListItem>
@@ -179,16 +199,17 @@
             </asp:DropDownList>
             
             <br />
-            <asp:Label ID="lblTransport" runat="server" Text="Assign Transport ID" Width="100%"></asp:Label>
+            <asp:Label ID="lblTransport" runat="server" Text="Assign Transport ID" Width="100%" Font-Bold="True"></asp:Label>
             <asp:DropDownList ID="ddlTSCtransport" AppendDataBoundItems="true" CssClass="form-control" Width="100%" runat="server" DataSourceID="sdsTSCtransport" DataTextField="train_id" DataValueField="train_id">
                 <asp:ListItem Value="0">Select Train ID</asp:ListItem>
             </asp:DropDownList>
             <asp:SqlDataSource ID="sdsTSCtransport" runat="server" ConnectionString="<%$ ConnectionStrings:mycon %>" SelectCommand="SELECT [train_id] FROM [train_details]"></asp:SqlDataSource>
             <br />
-            <asp:Label ID="lblTSCfare" runat="server" Text="Assign Transport Fare" Width="100%"></asp:Label>
+            <asp:Label ID="lblTSCfare" runat="server" Text="Assign Transport Fare" Width="100%" Font-Bold="True"></asp:Label>
             <asp:TextBox ID="txtTSCfare" CssClass="form-control" Width="100%" placeholder="Provide Train Fare" runat="server" onkeypress="return isNumber(event)"></asp:TextBox>
             <br />
-            <asp:Button ID="btnTSCadd" CssClass="btn btn-primary" Width="100%" runat="server" Text="Add Train Schedule" OnClick="btnTSCadd_Click" />
+            <asp:Button ID="btnTSCadd" CssClass="btn btn-primary" Width="45%" runat="server" Style="float:left" Text="Add Train Schedule" OnClick="btnTSCadd_Click" />&nbsp;
+            <asp:button  runat="server" id="btnReset" cssclass="btn btn-primary" style=" float:right" text="Reset" width="45%" OnClick="btnReset_Click" />
             <br />
             <br />
             <asp:Label runat="server" ID="lblTSCsms" Width="100%"></asp:Label>

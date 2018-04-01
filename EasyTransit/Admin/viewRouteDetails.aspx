@@ -14,7 +14,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-        <div class="container" style="padding:0px; background-color:#3A8330;">
+        <div class="container" style="padding:0px; background-color:#67C8B7;">
                 <div style="text-align:center;height:auto;padding:9px;background-color:teal; ">
 
                         <h2 style="color:white;">Route Details Information</h2>

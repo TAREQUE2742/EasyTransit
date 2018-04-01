@@ -21,10 +21,12 @@ namespace EasyTransit
                 td2.Visible = false;
                 td1.Text = Session["route"].ToString();
                 td2.Text =Session["day"].ToString();
-                td3.ForeColor = System.Drawing.Color.Yellow;
-                td4.ForeColor = System.Drawing.Color.Yellow;
-                td3.Text =Session["Ori"].ToString() + " TO " + Session["Desti"].ToString();
-                td4.Text = "On " + Session["JourneyDate"];
+                td3.ForeColor = System.Drawing.Color.Black;
+                td3.Font.Bold = true;
+                td4.Font.Bold = true;
+                td4.ForeColor = System.Drawing.Color.Black;
+                td3.Text ="Journey Trip : "+Session["Ori"].ToString() + " -TO- " + Session["Desti"].ToString();
+                td4.Text = "On - " + Session["JourneyDate"];
 
                 //if (con.State == ConnectionState.Closed)
                 //{

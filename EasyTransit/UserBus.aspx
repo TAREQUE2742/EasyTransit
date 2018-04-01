@@ -42,8 +42,6 @@
       <div class="col-lg-6 col-md-6 col-sm-4">
          
           <br />
-          d<asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
-         
-      </div>
+          d</div>
   </div>
 </asp:Content>

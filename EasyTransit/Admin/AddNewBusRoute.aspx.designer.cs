@@ -31,15 +31,6 @@ namespace EasyTransit.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtaddbroute;
         
         /// <summary>
-        /// rfvorigin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvorigin;
-        
-        /// <summary>
         /// lblbroute control.
         /// </summary>
         /// <remarks>
@@ -56,15 +47,6 @@ namespace EasyTransit.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtbdestination;
-        
-        /// <summary>
-        /// rfvdestination control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvdestination;
         
         /// <summary>
         /// btnbroute control.

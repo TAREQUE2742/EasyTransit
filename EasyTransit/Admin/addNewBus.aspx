@@ -30,7 +30,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="position: relative; padding: 0px;">
+    <div class="container" style="position: relative;background-image: url(image/busShohag.jpg);  background-repeat:no-repeat; background-size:1170px; padding: 0px;">
         <div class="ad-Bus" style="border-radius:30px;">
                 <div class="Bus-header" style="border-radius:30px;">Add New Bus Informations</div>
                      <div class="Bus-body" style="position:center;">

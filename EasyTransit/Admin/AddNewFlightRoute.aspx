@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="background-color:skyblue;height:auto;">
-            <div class="col-lg-4 col-md-3 col-sm-3">
+            <div class="col-lg-5 col-md-5 col-sm-4">
                 <br />
                 <br />
                 <center><h4>Add Train Route</h4></center>
@@ -31,7 +31,7 @@
                 <br />
           </div>
         <br />
-             <div class="col-lg-8 col-md-9 col-sm-9">
+             <div class="col-lg-7 col-md-7 col-sm-8">
                 <br />
                 <br />
                 <center><h4>View Train Route Information</h4></center>
