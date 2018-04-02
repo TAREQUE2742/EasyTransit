@@ -31,6 +31,15 @@ namespace EasyTransit {
         protected global::System.Web.UI.WebControls.DropDownList ddlRbusStrat;
         
         /// <summary>
+        /// sdsRBusOrigin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsRBusOrigin;
+        
+        /// <summary>
         /// Destination control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace EasyTransit {
         protected global::System.Web.UI.WebControls.DropDownList BusDestination;
         
         /// <summary>
+        /// sdsRbusDetination control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsRbusDetination;
+        
+        /// <summary>
         /// JourneyDate control.
         /// </summary>
         /// <remarks>
@@ -58,13 +76,13 @@ namespace EasyTransit {
         protected global::System.Web.UI.WebControls.Label JourneyDate;
         
         /// <summary>
-        /// BusDate control.
+        /// txtBusDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BusDate;
+        protected global::System.Web.UI.WebControls.TextBox txtBusDate;
         
         /// <summary>
         /// btnuserSearch control.
@@ -76,12 +94,12 @@ namespace EasyTransit {
         protected global::System.Web.UI.WebControls.Button btnuserSearch;
         
         /// <summary>
-        /// SqlDataSourceBUsRoute control.
+        /// lblRBusSms control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceBUsRoute;
+        protected global::System.Web.UI.WebControls.Label lblRBusSms;
     }
 }
