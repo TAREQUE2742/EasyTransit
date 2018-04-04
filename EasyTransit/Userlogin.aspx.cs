@@ -34,14 +34,18 @@ namespace EasyTransit
                     cmd.CommandText = "select * from Passenger_Details where email = @email and password = @password";
                     cmd.Parameters.AddWithValue("@email", tusername.Text);
                     cmd.Parameters.AddWithValue("@password", tpassword.Text);
-                    SqlDataReader dr;
-                    dr = cmd.ExecuteReader();
-                    dr.Read();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    
                     if (dr.HasRows)
                     {
-                        Session["user-email"] = tusername.Text;
-                        Response.Redirect("ruserslide.aspx");
-                        dr.Close();
+                        if (dr.Read())
+                        {
+                            Session["user-email"] = tusername.Text;
+                            HttpContext.Current.Session["user-name"] = dr["name"].ToString();
+                            Response.Redirect("ruserslide.aspx");
+                            dr.Close();
+                        }
+                      
                     }
                     else
                     {

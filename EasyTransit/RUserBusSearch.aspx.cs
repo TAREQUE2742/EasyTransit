@@ -6,11 +6,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace EasyTransit
 {
     public partial class RUserBusSearch : System.Web.UI.Page
     {
+        string buscom;
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString.ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -45,6 +47,30 @@ namespace EasyTransit
 
             }
 
+          
+
+        }
+
+        protected void BusSResult_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("Select"))
+            {
+                LinkButton btnedit = (LinkButton)e.CommandSource;
+                GridViewRow BusView = (GridViewRow)btnedit.NamingContainer;
+                int trans = Convert.ToInt32(e.CommandArgument);
+                lblBuscompanyname.Text = trans.ToString();
+                string code = BusSResult.DataKeys[2].Value.ToString();
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "ShowPopup();", true);
+              
+
+            }
+        }
+
+        protected void BusSResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           buscom= BusSResult.SelectedRow.Cells[1].Text;
+            Response.Write(buscom);
         }
     }
 }

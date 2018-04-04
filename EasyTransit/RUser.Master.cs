@@ -17,7 +17,9 @@ namespace EasyTransit
             }
             else
             {
-                lbluserwelcome.Text = "Welcome" + " " + Session["user-email"].ToString();
+                lbluserwelcome.ForeColor = System.Drawing.Color.Yellow;
+                lbluserwelcome.Font.Bold = true;
+                lbluserwelcome.Text = "Welcome" + " " +" "+Session["user-name"].ToString();
             }
         }
 

@@ -1,5 +1,31 @@
 ﻿<%@ Page Title="Bus Search" Language="C#" MasterPageFile="~/RUser.Master" AutoEventWireup="true" CodeBehind="RUserBusSearch.aspx.cs" Inherits="EasyTransit.RUserBusSearch" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <script src="Scripts/WebForms/GridView.js"></script>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        function ShowPopup(com, type, origin, destination, weekday, time, fare, bus) {
+
+            $("[id*=btnShowPopup]").click(function () {
+                
+            $("#lblBuscompanyname").text(com);
+            $("#lblBustype").text(type);
+            $("#lblBusStratplace").text(origin);
+            $("#lblBusdestinationplace").text(destination);
+            $("#lblBusdeparturetime").text(weekday);
+            $("#lblBusjourneydate").text(time);
+            $("#lblBusfare").text(fare);
+            $("#lblbusnumber").text(bus);
+            })
+           <%-- $('#<%=myModal.ClientID %>').show();--%>
+
+        }
+    </script>
+    <style>
+        .modal-backdrop { height: 100%; }
+    </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="background:#E0DCEB; text-align:center; color:#140028;height:inherit;">
@@ -16,20 +42,78 @@
            
             <br />
             <br />
-            <asp:GridView ID="BusSResult" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="table table-responsive table-hover" DataSourceID="SqlDataSource1" Width="100%" BorderStyle="None" CellPadding="5" CellSpacing="25" GridLines="None" ShowHeader="False" Font-Bold="True" Font-Size="Medium">
+            <asp:GridView ID="BusSResult" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="table table-responsive table-hover" DataSourceID="SqlDataSource1" Width="100%" BorderStyle="None" CellPadding="5" CellSpacing="25" GridLines="None" Font-Bold="True" Font-Size="Medium" OnRowCommand="BusSResult_RowCommand" OnSelectedIndexChanged="BusSResult_SelectedIndexChanged">
                 <Columns>
-                    <asp:BoundField DataField="bcompany_name" HeaderText="bcompany_name" SortExpression="bcompany_name" />
-                    <asp:BoundField DataField="bus_type" HeaderText="bus_type" SortExpression="bus_type" />
-                    <asp:BoundField DataField="origin" HeaderText="origin" SortExpression="origin" />
-                    <asp:BoundField DataField="destination" HeaderText="destination" SortExpression="destination" />
-                    <asp:BoundField DataField="weekday" HeaderText="weekday" SortExpression="weekday" />
-                    <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
-                    <asp:BoundField DataField="fare" HeaderText="fare" SortExpression="fare" />
-                    <asp:BoundField DataField="Transport_id" HeaderText="Transport_id" SortExpression="Transport_id" />
+                    <asp:TemplateField HeaderText="Bus Company Name" SortExpression="bcompany_name">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txtBuscom" runat="server" Text='<%# Bind("bcompany_name") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblBuscomname" runat="server" Text='<%# Bind("bcompany_name") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Bus Type" SortExpression="bus_type">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("bus_type") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblBustype" runat="server" Text='<%# Bind("bus_type") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Origin Place" SortExpression="origin">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("origin") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblBusorigin" runat="server" Text='<%# Bind("origin") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Destination Place" SortExpression="destination">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("destination") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblBusdestination" runat="server" Text='<%# Bind("destination") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Journey Day" SortExpression="weekday">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("weekday") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblBusweekday" runat="server" Text='<%# Bind("weekday") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Time" SortExpression="time">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("time") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblBustime" runat="server" Text='<%# Bind("time") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Fare" SortExpression="fare">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("fare") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblBusfare" runat="server" Text='<%# Bind("fare") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Coach No." SortExpression="Transport_id">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("Transport_id") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lblBusno" runat="server" Text='<%# Bind("Transport_id") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField ShowHeader="False">
                         <ItemTemplate>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" CommandName="Select" Text="Book"></asp:LinkButton>
+                            <%--<asp:Button runat="server" OnClick='btnShowPopup("<%# Eval("bcompany_name") %>","<%# Eval("bus_type") %>","<%# Eval("origin") %>","<%# Eval("destination") %>","<%# Eval("weekday") %>","<%# Eval("time") %>","<%# Eval("fare") %>","<%# Eval("Transport_id") %>")' data-toggle="modal" data-target="#myModal" Text="Book"></asp:Button>--%>
+                            <asp:LinkButton runat="server" data-toggle="modal" data-target="#myModal"></asp:LinkButton>
                         </ItemTemplate>
+
                         <ControlStyle CssClass="btn btn-primary" />
                     </asp:TemplateField>
                 </Columns>
@@ -40,7 +124,57 @@
                     <asp:ControlParameter ControlID="td1" Name="routeid" PropertyName="Text" />
                 </SelectParameters>
             </asp:SqlDataSource>
-            
+            <br />
+            <br />
+                <div class="modal fade" id="myModal" style="display: none">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">
+                                Buy Bus Ticket</h4>
+                        </div>
+                        <div class="modal-body">
+                                <asp:Label ID="lblBuscompany" runat="server" Font-Bold="true" Text="Bus Company Name :"></asp:Label>&nbsp;
+                                <asp:Label ID="lblBuscompanyname" runat="server"></asp:Label>
+                                <br />
+                                <br />
+                                <asp:Label ID="lblBusty" runat="server" Font-Bold="true" Text="Bus Type :"></asp:Label>&nbsp;
+                                <asp:Label ID="lblBustype" runat="server" Text="Label"></asp:Label>
+                                <br />
+                                <br />
+                                <asp:Label ID="lblBusStart" runat="server" Font-Bold="true" Text="Starting Place :"></asp:Label>&nbsp;
+                                <asp:Label ID="lblBusStratplace" runat="server" Text="Label"></asp:Label>
+                                <br />
+                                <br />
+                                <asp:Label ID="lblBusdestination" runat="server" Font-Bold="true" Text="Destination Place :"></asp:Label>&nbsp;
+                                <asp:Label ID="lblBusdestinationplace" runat="server" Text="Label"></asp:Label>
+                                <br />
+                                <br />
+                                <asp:Label ID="lblBusdeparture" runat="server" Font-Bold="true" Text="Departure Time :"></asp:Label>&nbsp;
+                                <asp:Label ID="lblBusdeparturetime" runat="server" Text="Label"></asp:Label>
+                                <br />
+                                <br />
+                                <asp:Label ID="lblBusdate" runat="server" Font-Bold="true" Text="Journey Date :"></asp:Label>&nbsp;
+                                <asp:Label ID="lblBusjourneydate" runat="server" Text="Label"></asp:Label>
+                                <br />
+                                <br />
+                                <asp:Label ID="lblBusfa" runat="server" Font-Bold="true" Text="Fare :"></asp:Label>&nbsp;
+                                <asp:Label ID="lblBusfare" runat="server" Text="Label"></asp:Label>
+                              <br />
+                                <br />
+                                <asp:Label ID="lblBusid" runat="server" Font-Bold="true" Text="Coach No :"></asp:Label>&nbsp;
+                                <asp:Label ID="lblbusnumber" runat="server"></asp:Label>
+                        </div>
+                        <div class="modal-footer">
+                        <asp:Button type="button" class="btn btn-primary" runat="server" Text="Buy ticket"></asp:Button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"> Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
  
     </div>
