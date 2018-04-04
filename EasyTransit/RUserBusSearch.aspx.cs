@@ -55,22 +55,25 @@ namespace EasyTransit
         {
             if (e.CommandName.Equals("Select"))
             {
-                LinkButton btnedit = (LinkButton)e.CommandSource;
-                GridViewRow BusView = (GridViewRow)btnedit.NamingContainer;
-                int trans = Convert.ToInt32(e.CommandArgument);
-                lblBuscompanyname.Text = trans.ToString();
-                string code = BusSResult.DataKeys[2].Value.ToString();
-
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "ShowPopup();", true);
-              
-
+                string[] commandArgs = e.CommandArgument.ToString().Split(new char[] { ',' });
+                string firstArgVal = commandArgs[0];
+                string secondArgVal = commandArgs[1];
+                Session["bcompany"] = firstArgVal;
+                Session["btrans"] = secondArgVal;
+                Response.Write(firstArgVal+" "+secondArgVal);
+                //Response.Redirect("RUserpayment.aspx");
             }
         }
 
         protected void BusSResult_SelectedIndexChanged(object sender, EventArgs e)
         {
-           buscom= BusSResult.SelectedRow.Cells[1].Text;
-            Response.Write(buscom);
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+
+
+            //Response.Redirect("RUserpayment.aspx");
         }
     }
 }

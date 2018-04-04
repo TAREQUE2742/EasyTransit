@@ -267,6 +267,7 @@
     <Content Include="RUserBusSearch.aspx" />
     <Content Include="RUserFlight.aspx" />
     <Content Include="RUserFlightSearch.aspx" />
+    <Content Include="RUserpayment.aspx" />
     <Content Include="ruserslide.aspx" />
     <Content Include="RUserTrain.aspx" />
     <Content Include="RUserTrainSearch.aspx" />
@@ -501,6 +502,13 @@
     </Compile>
     <Compile Include="RUserFlightSearch.aspx.designer.cs">
       <DependentUpon>RUserFlightSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RUserpayment.aspx.cs">
+      <DependentUpon>RUserpayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RUserpayment.aspx.designer.cs">
+      <DependentUpon>RUserpayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="ruserslide.aspx.cs">
       <DependentUpon>ruserslide.aspx</DependentUpon>

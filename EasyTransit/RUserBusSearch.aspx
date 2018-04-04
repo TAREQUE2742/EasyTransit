@@ -1,30 +1,30 @@
 ﻿<%@ Page Title="Bus Search" Language="C#" MasterPageFile="~/RUser.Master" AutoEventWireup="true" CodeBehind="RUserBusSearch.aspx.cs" Inherits="EasyTransit.RUserBusSearch" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-    <script src="Scripts/WebForms/GridView.js"></script>
+<%--    <script src="Scripts/WebForms/GridView.js"></script>
     <script src="Scripts/jquery-1.10.2.js"></script>
     <script src="Scripts/jquery-1.10.2.min.js"></script>
     <script type="text/javascript">
-        function ShowPopup(com, type, origin, destination, weekday, time, fare, bus) {
+        function ShowPopup() {
 
-            $("[id*=btnShowPopup]").click(function () {
+            $("[id*=myModal]").click();
                 
-            $("#lblBuscompanyname").text(com);
-            $("#lblBustype").text(type);
-            $("#lblBusStratplace").text(origin);
-            $("#lblBusdestinationplace").text(destination);
-            $("#lblBusdeparturetime").text(weekday);
-            $("#lblBusjourneydate").text(time);
-            $("#lblBusfare").text(fare);
-            $("#lblbusnumber").text(bus);
-            })
+            //$("#lblBuscompanyname").text(com);
+            //$("#lblBustype").text(type);
+            //$("#lblBusStratplace").text(origin);
+            //$("#lblBusdestinationplace").text(destination);
+            //$("#lblBusdeparturetime").text(weekday);
+            //$("#lblBusjourneydate").text(time);
+            //$("#lblBusfare").text(fare);
+            //$("#lblbusnumber").text(bus);
+            //})
            <%-- $('#<%=myModal.ClientID %>').show();--%>
 
         }
-    </script>
+ <%--   </script>
     <style>
         .modal-backdrop { height: 100%; }
-    </style>
+    </style>--%>--%>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -110,10 +110,8 @@
                     </asp:TemplateField>
                     <asp:TemplateField ShowHeader="False">
                         <ItemTemplate>
-                            <%--<asp:Button runat="server" OnClick='btnShowPopup("<%# Eval("bcompany_name") %>","<%# Eval("bus_type") %>","<%# Eval("origin") %>","<%# Eval("destination") %>","<%# Eval("weekday") %>","<%# Eval("time") %>","<%# Eval("fare") %>","<%# Eval("Transport_id") %>")' data-toggle="modal" data-target="#myModal" Text="Book"></asp:Button>--%>
-                            <asp:LinkButton runat="server" data-toggle="modal" data-target="#myModal"></asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" CommandArgument='<%# Bind("bcompany_name")+";"+Bind("Transport_id") %>' CommandName="Select" OnClick="LinkButton1_Click" Text="Book Now"></asp:LinkButton>
                         </ItemTemplate>
-
                         <ControlStyle CssClass="btn btn-primary" />
                     </asp:TemplateField>
                 </Columns>
@@ -126,55 +124,6 @@
             </asp:SqlDataSource>
             <br />
             <br />
-                <div class="modal fade" id="myModal" style="display: none">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">
-                                Buy Bus Ticket</h4>
-                        </div>
-                        <div class="modal-body">
-                                <asp:Label ID="lblBuscompany" runat="server" Font-Bold="true" Text="Bus Company Name :"></asp:Label>&nbsp;
-                                <asp:Label ID="lblBuscompanyname" runat="server"></asp:Label>
-                                <br />
-                                <br />
-                                <asp:Label ID="lblBusty" runat="server" Font-Bold="true" Text="Bus Type :"></asp:Label>&nbsp;
-                                <asp:Label ID="lblBustype" runat="server" Text="Label"></asp:Label>
-                                <br />
-                                <br />
-                                <asp:Label ID="lblBusStart" runat="server" Font-Bold="true" Text="Starting Place :"></asp:Label>&nbsp;
-                                <asp:Label ID="lblBusStratplace" runat="server" Text="Label"></asp:Label>
-                                <br />
-                                <br />
-                                <asp:Label ID="lblBusdestination" runat="server" Font-Bold="true" Text="Destination Place :"></asp:Label>&nbsp;
-                                <asp:Label ID="lblBusdestinationplace" runat="server" Text="Label"></asp:Label>
-                                <br />
-                                <br />
-                                <asp:Label ID="lblBusdeparture" runat="server" Font-Bold="true" Text="Departure Time :"></asp:Label>&nbsp;
-                                <asp:Label ID="lblBusdeparturetime" runat="server" Text="Label"></asp:Label>
-                                <br />
-                                <br />
-                                <asp:Label ID="lblBusdate" runat="server" Font-Bold="true" Text="Journey Date :"></asp:Label>&nbsp;
-                                <asp:Label ID="lblBusjourneydate" runat="server" Text="Label"></asp:Label>
-                                <br />
-                                <br />
-                                <asp:Label ID="lblBusfa" runat="server" Font-Bold="true" Text="Fare :"></asp:Label>&nbsp;
-                                <asp:Label ID="lblBusfare" runat="server" Text="Label"></asp:Label>
-                              <br />
-                                <br />
-                                <asp:Label ID="lblBusid" runat="server" Font-Bold="true" Text="Coach No :"></asp:Label>&nbsp;
-                                <asp:Label ID="lblbusnumber" runat="server"></asp:Label>
-                        </div>
-                        <div class="modal-footer">
-                        <asp:Button type="button" class="btn btn-primary" runat="server" Text="Buy ticket"></asp:Button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"> Close</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
             </div>
  
     </div>
