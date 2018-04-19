@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <div class="container" style="background:#E0DCEB; text-align:center; color:#140028;height:inherit;">
       <div class="col-lg-6 col-md-6 col-sm-8">
-      <h3>Online Booking System for Multiple Transport Services</h3>
+      <h3>Flgiht Ticket Booking System</h3>
       <br />
      
     <center>
@@ -57,32 +57,17 @@
 
 
           </script>
-          <br />
-               <div id="slideshow" style="width:557px; height:340px;">
+               <div id="slideshow" style="width:557px; height:340px;"> 
                    <div>
-                       <img src="BUS/nabil.jpg" style="width:537px; height:320px;"  />
+                       <img src="plane/emirates.jpg" style="width:537px; height:320px;"/>
                    </div>
                    <div>
-                       <img src="BUS/green.jpg" style="width:537px; height:320px;" />
+                       <img src="plane/flydubai.jpg" style="width:537px; height:320px;"/>
                    </div>
                    <div>
-                       <img src="BUS/ena.jpg" style="width:537px; height:320px;" />
+                       <img src="plane/planes.jpg" style="width:537px; height:320px;" />
                    </div>
-                   <div>
-                       <img src="BUS/sarker.jpg" style="width:537px; height:320px;" /> 
-                   </div>
-                   <div>
-                       <img src="BUS/shah.jpg" style="width:537px; height:320px;" />
-                   </div>
-                   <div>
-                       <img src="BUS/shyamoli.jpg" style="width:537px; height:320px;" />
-                   </div>
-                   <div>
-                       <img src="BUS/sohag.jpg" style="width:537px; height:320px;" /> 
-                   </div>
-                   <div>
-                       <img src="BUS/star.jpg" style="width:537px; height:320px;" />
-                   </div>
+
                   
                 </div>
 

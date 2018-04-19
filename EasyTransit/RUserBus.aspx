@@ -3,9 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container" style="background:#E0DCEB; text-align:center; color:#140028;height:auto;">
-      <h3>Bus Ticket Booking System</h3>
-      <br />  <center>
+     
              <div class="col-lg-6 col-md-6 col-sm-8" >
+                  <h3>Bus Ticket Booking System</h3>
+                    <br /> 
+                 <center>
                       <div class="form-group">
                           <asp:Label ID="lblRBusStart" runat="server" style="font-size:17px;font-weight:bold;color:#140028;" Width="100%">Starting Place:</asp:Label> 
                           <asp:DropDownList ID="ddlRbusStrat" AppendDataBoundItems="true" CssClass="form-control" runat="server" placeholder="Where we can pick-up you?" DataSourceID="sdsRBusOrigin" DataTextField="origin" DataValueField="origin">
@@ -35,11 +37,48 @@
                       <br />
                       <asp:Label ID="lblRBusSms" runat="server" Font-Bold="True"></asp:Label>
                       <br />
+                     </center>
                  </div>
-          </center>
              <div class="col-lg-6 col-md-6 col-sm-4" >
 
-                 
+                 <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+          <script type="text/javascript">
+              
+
+                    $("#slideshow > div:gt(0)").hide();
+
+                    setInterval(function() {
+                      $('#slideshow > div:first')
+                        .fadeOut(1000)
+                        .next()
+                        .fadeIn(1000)
+                        .end()
+                        .appendTo('#slideshow');
+                    }, 3000);
+
+
+          </script>
+               <div id="slideshow" style="width:557px; height:340px;">
+                   <div>
+                       <img src="BUS/nabil.jpg" style="width:537px; height:320px;"  />
+                   </div>
+                   <div>
+                       <img src="BUS/green.jpg" style="width:537px; height:320px;" />
+                   </div>
+                   <div>
+                       <img src="BUS/ena.jpg" style="width:537px; height:320px;" />
+                   </div>
+                   <div>
+                       <img src="BUS/sarker.jpg" style="width:537px; height:320px;" /> 
+                   </div>
+                   <div>
+                       <img src="BUS/shah.jpg" style="width:537px; height:320px;" />
+                   </div>
+                   <div>
+                       <img src="BUS/shyamoli.jpg" style="width:537px; height:320px;" />
+                   </div>
+                  
+                </div>
              </div>
   </div>
 </asp:Content>

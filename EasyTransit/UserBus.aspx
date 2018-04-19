@@ -4,7 +4,7 @@
 
   <div class="container" style="background:#E0DCEB; text-align:center; color:#140028;height:inherit;">
       <div class="col-lg-6 col-md-6 col-sm-8">
-      <h3>Online Booking System for Multiple Transport Services</h3>
+      <h3>Bus Ticket Booking System</h3>
       <br />
      
     <center>
@@ -78,12 +78,6 @@
                    </div>
                    <div>
                        <img src="BUS/shyamoli.jpg" style="width:537px; height:320px;" />
-                   </div>
-                   <div>
-                       <img src="BUS/sohag.jpg" style="width:537px; height:320px;" /> 
-                   </div>
-                   <div>
-                       <img src="BUS/star.jpg" style="width:537px; height:320px;" />
                    </div>
                   
                 </div>

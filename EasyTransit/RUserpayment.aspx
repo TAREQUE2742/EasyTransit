@@ -123,7 +123,7 @@
                 <tr>
                     <td class="auto-style2"><strong>Available Seats:</strong></td>
                     <td class="auto-style3">
-                          <asp:Button ID="btnPay" runat="server" CssClass="btn btn-primary" Text="Pay Now" Width="100%" OnClick="btnPay_Click" />
+                          <asp:Button ID="btnPay" runat="server" CssClass="btn btn-primary" Text="Pay With PayUbiz" Width="100%" OnClick="btnPay_Click" />
                     </td>
                 </tr>
             </table>

@@ -227,6 +227,13 @@
     <Content Include="Admin\Scripts\jquery-1.10.2.min.map" />
     <Content Include="images\BusShohag-sm.jpg" />
     <Content Include="images\busShohag.jpg" />
+    <Content Include="plane\american.jpg" />
+    <Content Include="plane\biman.jpg" />
+    <Content Include="plane\emirates.jpg" />
+    <Content Include="plane\flydubai.jpg" />
+    <Content Include="plane\Lutfthansa.jpg" />
+    <Content Include="plane\novoair.jpg" />
+    <Content Include="plane\planes.jpg" />
     <Content Include="RUser.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\airplane.jpg" />
@@ -321,6 +328,10 @@
     <Content Include="SuccessPayment.aspx" />
     <Content Include="TFailure.aspx" />
     <Content Include="TrainPayment.aspx" />
+    <Content Include="train\dinajpur.JPG" />
+    <Content Include="train\provati].jpg" />
+    <Content Include="train\tongi.JPG" />
+    <Content Include="train\train.jpg" />
     <Content Include="TSuccess.aspx" />
     <Content Include="UserBus.aspx" />
     <Content Include="UserFlight.aspx" />

@@ -3,7 +3,7 @@
     
   <div class="container" style="background:#E0DCEB; text-align:center; color:#140028;height:inherit;">
       <div class="col-lg-6 col-md-6 col-sm-8">
-      <h3>Online Booking System for Multiple Transport Services</h3>
+      <h3>Train Booking System</h3>
       <br />
      
     <center>
@@ -40,8 +40,38 @@
       </div>
        
       <div class="col-lg-6 col-md-6 col-sm-4">
-         
-          <br />
-          d</div>
+
+           <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+          <script type="text/javascript">
+              
+
+                    $("#slideshow > div:gt(0)").hide();
+
+                    setInterval(function() {
+                      $('#slideshow > div:first')
+                        .fadeOut(1000)
+                        .next()
+                        .fadeIn(1000)
+                        .end()
+                        .appendTo('#slideshow');
+                    }, 3000);
+
+
+          </script>
+               <div id="slideshow" style="width:557px; height:340px;">
+                   <div>
+                       <img src="train/dinajpur.JPG" style="width:537px; height:320px;" />
+                   </div>
+                   <div>
+                       <img src="train/provati].jpg" style="width:537px; height:320px;" />
+                   </div>
+                   <div>
+                       <img src="train/tongi.JPG" style="width:537px; height:320px;" />
+                   </div>
+                   <div>
+                       <img src="train/train.jpg" style="width:537px; height:320px;" />
+                   </div>
+                </div>
+        </div>
   </div>
 </asp:Content>

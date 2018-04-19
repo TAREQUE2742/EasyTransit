@@ -62,8 +62,8 @@
                         
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><asp:Button  runat="server" PostBackUrl="~/Userlogin.aspx" ID="btnlogin" Text="Login" CssClass="btn btn-sm" Style="padding:18px;background:none;font-size:14px;color:white;" /></li>
-                        <li><asp:Button runat="server" PostBackUrl="~/UserRegistration.aspx" CssClass="btn btn-sm" ID="btnregistration" Text="Register" Style="padding:18px;background:none;font-size:14px;color:white;" /></li>
+                        <li><asp:Button  runat="server" PostBackUrl="~/Userlogin.aspx" ID="btnlogin" Text="Login" CssClass="btn btn-sm" Style="padding:14px;background:none;font-size:14px;color:white;" /></li>
+                        <li><asp:Button runat="server" PostBackUrl="~/UserRegistration.aspx" CssClass="btn btn-sm" ID="btnregistration" Text="Register" Style="padding:14px;background:none;font-size:14px;color:white;" /></li>
                     </ul>
                 </div>
             </div>

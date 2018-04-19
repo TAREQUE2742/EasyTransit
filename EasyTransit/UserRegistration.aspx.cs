@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Net.Mail;
+using System.Net;
+using System.Collections.Specialized;
 
 namespace EasyTransit
 {
@@ -42,21 +45,72 @@ namespace EasyTransit
                     cmd.Parameters.AddWithValue("@contact", rcontact.Text);
                     cmd.Parameters.AddWithValue("@address", raddress.InnerText);
                     cmd.Parameters.AddWithValue("@email", remail.Text);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-               
-                    rname.Text = "";
-                    rpassword.Text = "";
-                    rage.Text = "";
-                    rgender.SelectedItem.Text = "";
-                    rcontact.Text = "";
-                    raddress.InnerText = "";
-                    remail.Text = "";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert('Registration successfully.....');window.location.href = 'Userlogin.aspx'", true);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        mailsend();
+                        smssend();
+                        rname.Text = "";
+                        rpassword.Text = "";
+                        rage.Text = "";
+                        rgender.SelectedItem.Text = "";
+                        rcontact.Text = "";
+                        raddress.InnerText = "";
+                        remail.Text = "";
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", "alert('Your Registration successful and Check your mail for Further information..!');window.location.href = 'Userlogin.aspx'", true);
+                    }
+                    catch
+                    {
+                        lblRegistrationsms.Text = "Please Use Another Phone Number";
+                    }
+                  
                
                 }
             }
 
+        }
+
+        protected void mailsend()
+        {
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.Credentials = new System.Net.NetworkCredential("easytransitbd@gmail.com", "Sondip.1005199535");
+            smtp.EnableSsl = true;
+            MailMessage msg = new MailMessage();
+            msg.Subject = "Hello " + rname.Text + "  Thanks for Register at EasyTransit";
+            msg.Body = "Hi, Thanks For Your Registration at EasyTransit, Your Username: '" + remail.Text + "' and Password: '" + rpassword.Text + "', We will Provide You The Latest Update. Thanks.";
+            string toaddress = remail.Text;
+            msg.To.Add(toaddress);
+            string fromaddress = "EasyTransit <easytransitbd@gmail.com>";
+            msg.From = new MailAddress(fromaddress);
+            try
+            {
+                smtp.Send(msg);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        protected void smssend()
+        {
+            string destinationaddr = "+88" + rcontact.Text;
+            string message = "Hi " + rname.Text + " , You Have Been Registered at EasyTransit. Thanks!!";
+
+            String message1 = HttpUtility.UrlEncode(message);
+            using (WebClient client = new WebClient())
+            {
+                byte[] response = client.UploadValues("http://textbelt.com/text", new NameValueCollection() {
+                        { "phone", destinationaddr},
+                        { "message", message1},
+                        { "key", "textbelt" },
+                      });
+
+                string result = System.Text.Encoding.UTF8.GetString(response);
+            }
         }
     }
 }
