@@ -1,30 +1,6 @@
 ﻿<%@ Page Title="Bus Search" Language="C#" MasterPageFile="~/RUser.Master" AutoEventWireup="true" CodeBehind="RUserBusSearch.aspx.cs" Inherits="EasyTransit.RUserBusSearch" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-<%--    <script src="Scripts/WebForms/GridView.js"></script>
-    <script src="Scripts/jquery-1.10.2.js"></script>
-    <script src="Scripts/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript">
-        function ShowPopup() {
-
-            $("[id*=myModal]").click();
-                
-            //$("#lblBuscompanyname").text(com);
-            //$("#lblBustype").text(type);
-            //$("#lblBusStratplace").text(origin);
-            //$("#lblBusdestinationplace").text(destination);
-            //$("#lblBusdeparturetime").text(weekday);
-            //$("#lblBusjourneydate").text(time);
-            //$("#lblBusfare").text(fare);
-            //$("#lblbusnumber").text(bus);
-            //})
-           <%-- $('#<%=myModal.ClientID %>').show();--%>
-
-        }
- <%--   </script>
-    <style>
-        .modal-backdrop { height: 100%; }
-    </style>--%>--%>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -110,13 +86,13 @@
                     </asp:TemplateField>
                     <asp:TemplateField ShowHeader="False">
                         <ItemTemplate>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" CommandArgument='<%# Bind("bcompany_name")+";"+Bind("Transport_id") %>' CommandName="Select" OnClick="LinkButton1_Click" Text="Book Now"></asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" CommandArgument='<%# Eval("bcompany_name")+","+Eval("Transport_id")+","+Eval("capacity")+","+Eval("fare") %>' CommandName="Select" OnClick="LinkButton1_Click" Text="Book Now"></asp:LinkButton>
                         </ItemTemplate>
                         <ControlStyle CssClass="btn btn-primary" />
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:mycon %>" SelectCommand="SELECT Bus_company.bcompany_name, bus_details.bus_type, Bus_routes.origin, Bus_routes.destination, Bus_schedule.weekday, Bus_schedule.time, Bus_schedule.fare, Bus_schedule.Transport_id FROM Bus_company INNER JOIN bus_details ON Bus_company.bcompany_id = bus_details.bcompany_id INNER JOIN Bus_schedule ON bus_details.bus_id = Bus_schedule.Transport_id INNER JOIN Bus_routes ON Bus_schedule.routeid = Bus_routes.routeid WHERE (Bus_schedule.weekday = @weekday) AND (Bus_schedule.routeid = @routeid)">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:mycon %>" SelectCommand="SELECT Bus_company.bcompany_name, bus_details.bus_type, bus_details.capacity, Bus_routes.origin, Bus_routes.destination, Bus_schedule.weekday, Bus_schedule.time, Bus_schedule.fare, Bus_schedule.Transport_id FROM Bus_company INNER JOIN bus_details ON Bus_company.bcompany_id = bus_details.bcompany_id INNER JOIN Bus_schedule ON bus_details.bus_id = Bus_schedule.Transport_id INNER JOIN Bus_routes ON Bus_schedule.routeid = Bus_routes.routeid WHERE (Bus_schedule.weekday = @weekday) AND (Bus_schedule.routeid = @routeid)">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="td2" Name="weekday" PropertyName="Text" />
                     <asp:ControlParameter ControlID="td1" Name="routeid" PropertyName="Text" />

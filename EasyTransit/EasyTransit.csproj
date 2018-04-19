@@ -192,13 +192,31 @@
     <Content Include="Admin\viewReservationDetails.aspx" />
     <Content Include="Admin\viewRouteDetails.aspx" />
     <Content Include="Admin\viewTrainDetails.aspx" />
+    <Content Include="BUS\ena.jpg" />
+    <Content Include="BUS\green.jpg" />
+    <Content Include="BUS\nabil.jpg" />
+    <Content Include="BUS\sarker.jpg" />
+    <Content Include="BUS\shah.jpg" />
+    <Content Include="BUS\shyamoli.jpg" />
+    <Content Include="BUS\sohag.jpg" />
+    <Content Include="BUS\sohag1.jpg" />
+    <Content Include="BUS\sohag2.jpg" />
+    <Content Include="BUS\star.jpg" />
+    <Content Include="BUS\tfailed.jpg" />
+    <Content Include="BUS\TR.jpg" />
+    <Content Include="BUS\Tsuccess.gif" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="EditProfile.aspx" />
+    <Content Include="FailurePayment.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="FFailure.aspx" />
+    <Content Include="FlightPayment.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FSuccess.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -300,6 +318,10 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="SuccessPayment.aspx" />
+    <Content Include="TFailure.aspx" />
+    <Content Include="TrainPayment.aspx" />
+    <Content Include="TSuccess.aspx" />
     <Content Include="UserBus.aspx" />
     <Content Include="UserFlight.aspx" />
     <Content Include="UserFlightSearch.aspx" />
@@ -464,6 +486,41 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditProfile.aspx.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProfile.aspx.designer.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FailurePayment.aspx.cs">
+      <DependentUpon>FailurePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FailurePayment.aspx.designer.cs">
+      <DependentUpon>FailurePayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FFailure.aspx.cs">
+      <DependentUpon>FFailure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FFailure.aspx.designer.cs">
+      <DependentUpon>FFailure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FlightPayment.aspx.cs">
+      <DependentUpon>FlightPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlightPayment.aspx.designer.cs">
+      <DependentUpon>FlightPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FSuccess.aspx.cs">
+      <DependentUpon>FSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FSuccess.aspx.designer.cs">
+      <DependentUpon>FSuccess.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -544,6 +601,34 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessPayment.aspx.cs">
+      <DependentUpon>SuccessPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuccessPayment.aspx.designer.cs">
+      <DependentUpon>SuccessPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TFailure.aspx.cs">
+      <DependentUpon>TFailure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TFailure.aspx.designer.cs">
+      <DependentUpon>TFailure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrainPayment.aspx.cs">
+      <DependentUpon>TrainPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrainPayment.aspx.designer.cs">
+      <DependentUpon>TrainPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TSuccess.aspx.cs">
+      <DependentUpon>TSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TSuccess.aspx.designer.cs">
+      <DependentUpon>TSuccess.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserBus.aspx.cs">
       <DependentUpon>UserBus.aspx</DependentUpon>

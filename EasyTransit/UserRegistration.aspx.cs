@@ -21,7 +21,7 @@ namespace EasyTransit
 
         protected void rsubmit_Click(object sender, EventArgs e)
         {
-            if(rusername.Text=="" || rname.Text=="" || rpassword.Text=="" || rage.Text=="" || rcontact.Text=="" || remail.Text=="")
+            if(rname.Text=="" || rpassword.Text=="" || rage.Text=="" || rcontact.Text=="" || remail.Text=="")
             {
                 lblRegistrationsms.Text = "Please Provide Valid Information";
             }
@@ -33,20 +33,18 @@ namespace EasyTransit
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
-                    cmd.CommandText = "INSERT INTO Passenger_Details(userid,name,password ,Age ,Gender ,adress,contact ,email) values(@userid,@name,@password ,@Age ,@Gender ,@adress,@contact ,@email)";
+                    cmd.CommandText = "INSERT INTO Passenger_Details(name,password ,Age ,Gender ,address,contact ,email) values(@name,@password ,@Age ,@Gender ,@address,@contact ,@email)";
                     cmd.Connection = con;
-                    cmd.Parameters.AddWithValue("@userid",rusername.Text);
                     cmd.Parameters.AddWithValue("@name", rname.Text);
                     cmd.Parameters.AddWithValue("@password", rpassword.Text);
                     cmd.Parameters.AddWithValue("@Age", rage.Text);
                     cmd.Parameters.AddWithValue("@Gender", rgender.SelectedItem.Text);
                     cmd.Parameters.AddWithValue("@contact", rcontact.Text);
-                    cmd.Parameters.AddWithValue("@adress", raddress.InnerText);
+                    cmd.Parameters.AddWithValue("@address", raddress.InnerText);
                     cmd.Parameters.AddWithValue("@email", remail.Text);
                     cmd.ExecuteNonQuery();
                     con.Close();
-                
-                    rusername.Text = "";
+               
                     rname.Text = "";
                     rpassword.Text = "";
                     rage.Text = "";

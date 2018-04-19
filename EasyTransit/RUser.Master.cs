@@ -10,7 +10,7 @@ namespace EasyTransit
     public partial class RUser : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+         {
             if (Session["user-email"] == null)
             {
                 Response.Redirect("Default.aspx");

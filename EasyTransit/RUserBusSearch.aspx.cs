@@ -12,7 +12,6 @@ namespace EasyTransit
 {
     public partial class RUserBusSearch : System.Web.UI.Page
     {
-        string buscom;
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString.ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -58,11 +57,42 @@ namespace EasyTransit
                 string[] commandArgs = e.CommandArgument.ToString().Split(new char[] { ',' });
                 string firstArgVal = commandArgs[0];
                 string secondArgVal = commandArgs[1];
+                string thirdArgVal = commandArgs[2];
+                int cap = Convert.ToInt32(thirdArgVal);
+                string FourthArgVal = commandArgs[3];
                 Session["bcompany"] = firstArgVal;
                 Session["btrans"] = secondArgVal;
-                Response.Write(firstArgVal+" "+secondArgVal);
-                //Response.Redirect("RUserpayment.aspx");
+                Session["capa"] = thirdArgVal;
+                Session["busfare"] = FourthArgVal;
+
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = con;
+                    cmd.CommandText = "SELECT  SUM(seat) FROM bus_reservation WHERE(Transport_id ='" + secondArgVal + "') AND(date ='" + Session["JourneyDate"] + "')";
+                    try
+                    {
+                        string seatsum = cmd.ExecuteScalar().ToString();
+                        int seatSUM = Convert.ToInt32(seatsum);
+                        int availableseat = (cap - seatSUM);
+                        Session["availablese"] = availableseat.ToString();
+                    }
+                    catch
+                    {
+                        string availableseat = Session["capa"].ToString();
+                        Session["availablese"] = availableseat;
+                    }
+
+
+
+
+                }
+
+                Response.Redirect("RUserpayment.aspx");
             }
+            
         }
 
         protected void BusSResult_SelectedIndexChanged(object sender, EventArgs e)

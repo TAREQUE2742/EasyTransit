@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container" style="background:#E0DCEB; text-align:center; color:#140028;height:auto;">
-      <h3>Online Booking System for Multiple Transport Services</h3>
+      <h3>Bus Ticket Booking System</h3>
       <br />  <center>
              <div class="col-lg-6 col-md-6 col-sm-8" >
                       <div class="form-group">
@@ -30,7 +30,7 @@
         
                       </div>
                       <%--------- <button class="btn btn-primary">Search</button>--------%>
-                 <asp:Button ID="btnuserSearch" runat="server" Width="100%" Text="Search" CssClass="btn btn-primary" OnClick="btnuserSearch_Click" />
+                 <asp:Button ID="btnuserSearch" runat="server" Width="100%" Text="Search Bus" CssClass="btn btn-primary" OnClick="btnuserSearch_Click" />
                       <br />
                       <br />
                       <asp:Label ID="lblRBusSms" runat="server" Font-Bold="True"></asp:Label>

@@ -32,15 +32,14 @@ namespace EasyTransit
 
             if (ddlOrigin.SelectedIndex == ddlDestination.SelectedIndex)
             {
-                lblbusSearchsms.ForeColor = System.Drawing.Color.Red;
+                lblbusSearchsms.ForeColor = System.Drawing.Color.Purple;
                 lblbusSearchsms.Text = "Orign and Destination shouldn't Same.";
             }
             else
             {
                if(ddlOrigin.SelectedValue=="0" || ddlDestination.SelectedValue=="0" || txtjourneyDate.Text=="")
                 {
-                    lblbusSearchsms.ForeColor = System.Drawing.Color.Red;
-                    lblbusSearchsms.Font.Bold = true;
+                    lblbusSearchsms.ForeColor = System.Drawing.Color.Purple;
                     lblbusSearchsms.Text = "Provide Valid Information";
                 }
                 else

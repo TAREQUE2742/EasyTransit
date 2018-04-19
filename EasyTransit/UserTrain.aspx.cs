@@ -40,7 +40,7 @@ namespace EasyTransit
                 }
                 else
                 {
-                    Session["TJourneyDate"] = txtTjourneyDate.Text;
+                    Session["JourneyDate"] = txtTjourneyDate.Text;
                     Day = Convert.ToDateTime(txtTjourneyDate.Text).DayOfWeek.ToString();
 
                     DoTrainSearch();
@@ -63,10 +63,10 @@ namespace EasyTransit
                     string Troute = Convert.ToString(rdr["routeid"]);
                     string TOri = Convert.ToString(ddlOriginTrain.Text);
                     string TDesti = Convert.ToString(ddlDestination.Text);
-                    Session["Troute"] = Troute;
-                    Session["Tday"] = Day;
-                    Session["TOri"] = TOri;
-                    Session["TDesti"] = TDesti;
+                    Session["route"] = Troute;
+                    Session["day"] = Day;
+                    Session["Ori"] = TOri;
+                    Session["Desti"] = TDesti;
                     Response.Redirect("UserTrainSearch.aspx");
 
                 }

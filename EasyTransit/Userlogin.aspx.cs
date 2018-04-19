@@ -42,6 +42,8 @@ namespace EasyTransit
                         {
                             Session["user-email"] = tusername.Text;
                             HttpContext.Current.Session["user-name"] = dr["name"].ToString();
+                            HttpContext.Current.Session["user-contact"] = dr["contact"].ToString();
+                            HttpContext.Current.Session["user-id"] = dr["userid"].ToString();
                             Response.Redirect("ruserslide.aspx");
                             dr.Close();
                         }

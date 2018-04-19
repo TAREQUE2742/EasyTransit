@@ -15,18 +15,18 @@ namespace EasyTransit
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ConnectionString.ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Troute"] != null && Session["Tday"] != null)
+            if (Session["route"] != null && Session["day"] != null)
             {
                 td1.Visible = false;
                 td2.Visible = false;
-                td1.Text = Session["Troute"].ToString();
-                td2.Text = Session["Tday"].ToString();
+                td1.Text = Session["route"].ToString();
+                td2.Text = Session["day"].ToString();
                 td3.ForeColor = System.Drawing.Color.Black;
                 td3.Font.Bold = true;
                 td4.Font.Bold = true;
                 td4.ForeColor = System.Drawing.Color.Black;
-                td3.Text = "Journey Trip : " + Session["TOri"].ToString() + " -TO- " + Session["TDesti"].ToString();
-                td4.Text = "On - " + Session["TJourneyDate"];
+                td3.Text = "Journey Trip : " + Session["Ori"].ToString() + " -TO- " + Session["Desti"].ToString();
+                td4.Text = "On - " + Session["JourneyDate"];
 
            
                 TrainSearchView.Visible = true;

@@ -13,66 +13,93 @@ namespace EasyTransit {
     public partial class RUserFlight {
         
         /// <summary>
-        /// Sta control.
+        /// lblstartingFlight control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Sta;
+        protected global::System.Web.UI.WebControls.Label lblstartingFlight;
         
         /// <summary>
-        /// flightStarting control.
+        /// ddlOriginAirport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList flightStarting;
+        protected global::System.Web.UI.WebControls.DropDownList ddlOriginAirport;
         
         /// <summary>
-        /// Label1 control.
+        /// SqlDataSource3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
         
         /// <summary>
-        /// flightdestination control.
+        /// lbldestinationFlight control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList flightdestination;
+        protected global::System.Web.UI.WebControls.Label lbldestinationFlight;
         
         /// <summary>
-        /// Label2 control.
+        /// ddlDestinationAirport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDestinationAirport;
         
         /// <summary>
-        /// flightdate control.
+        /// SqlDataSource4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox flightdate;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource4;
         
         /// <summary>
-        /// btnuserSearch control.
+        /// lbljurDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnuserSearch;
+        protected global::System.Web.UI.WebControls.Label lbljurDate;
+        
+        /// <summary>
+        /// txtjourneyDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtjourneyDate;
+        
+        /// <summary>
+        /// btnFLIGHTsearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFLIGHTsearch;
+        
+        /// <summary>
+        /// lblflightSearchsms control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblflightSearchsms;
     }
 }

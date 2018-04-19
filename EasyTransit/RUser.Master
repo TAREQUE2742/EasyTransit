@@ -59,8 +59,10 @@
                         
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li style="margin-top:20px;"><asp:Label ID="lbluserwelcome" runat="server" ForeColor="Green"></asp:Label></li>
-                        <li><asp:Button  runat="server" onclick="btnlogout_Click" ID="btnlogout" Text="Logout" CssClass="btn btn-sm" Style="padding:18px;background:none;font-size:14px;color:white;" /></li>
+                        <li style="margin-top:20px;"><asp:Label ID="lbluserwelcome" runat="server" ForeColor="Green" Style="margin-right:40px;"></asp:Label></li>
+                        &nbsp;&nbsp;&nbsp;
+                        <li><a runat="server" href="~/EditProfile.aspx"><span class="glyphicon glyphicon-edit"></span>&nbsp; Edit Profile</a></li>
+                        <li><asp:Button  runat="server" onclick="btnlogout_Click" ID="btnlogout" Text="Logout" CssClass="btn btn-sm" Style="padding:14px;background:none;font-size:14px;color:white;" /></li>
                     </ul>
                 </div>
             </div>

@@ -5,7 +5,6 @@
                 <div id="signup-box" style="width:690px;">
               <div class="left">
                 <h1 class="sign">Sign up</h1>
-                  <asp:TextBox ID="rusername" CssClass="susername" placeholder="Username" runat="server"></asp:TextBox>
                   <asp:TextBox ID="remail" CssClass="semail" placeholder="Your E-mail" Type="email" runat="server"></asp:TextBox>
                   <asp:RegularExpressionValidator runat="server" ID="revemail" ControlToValidate="remail" ErrorMessage="Invalid Email Address" ForeColor="#CC0000" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                   <asp:TextBox ID="rpassword" CssClass="spassword" placeholder="Password" Type="password" runat="server"></asp:TextBox>

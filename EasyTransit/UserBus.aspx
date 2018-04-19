@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Bus Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserBus.aspx.cs" Inherits="EasyTransit.UserBus" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
   <div class="container" style="background:#E0DCEB; text-align:center; color:#140028;height:inherit;">
@@ -35,13 +36,58 @@
       <asp:Button runat="server" ID="btnBUSsearch" CssClass="btn btn-primary" Width="100%" Text="Search Bus" OnClick="btnBUSsearch_Click" />
         </center>
           <br />
-          <asp:Label ID="lblbusSearchsms" runat="server" Width="100%"></asp:Label>
+          <asp:Label ID="lblbusSearchsms" runat="server" Width="100%" Font-Bold="true"></asp:Label>
           <br />
       </div>
        
       <div class="col-lg-6 col-md-6 col-sm-4">
-         
+
+          <script type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
+          <script type="text/javascript">
+              
+
+                    $("#slideshow > div:gt(0)").hide();
+
+                    setInterval(function() {
+                      $('#slideshow > div:first')
+                        .fadeOut(1000)
+                        .next()
+                        .fadeIn(1000)
+                        .end()
+                        .appendTo('#slideshow');
+                    }, 3000);
+
+
+          </script>
           <br />
-          d</div>
+               <div id="slideshow" style="width:557px; height:340px;">
+                   <div>
+                       <img src="BUS/nabil.jpg" style="width:537px; height:320px;"  />
+                   </div>
+                   <div>
+                       <img src="BUS/green.jpg" style="width:537px; height:320px;" />
+                   </div>
+                   <div>
+                       <img src="BUS/ena.jpg" style="width:537px; height:320px;" />
+                   </div>
+                   <div>
+                       <img src="BUS/sarker.jpg" style="width:537px; height:320px;" /> 
+                   </div>
+                   <div>
+                       <img src="BUS/shah.jpg" style="width:537px; height:320px;" />
+                   </div>
+                   <div>
+                       <img src="BUS/shyamoli.jpg" style="width:537px; height:320px;" />
+                   </div>
+                   <div>
+                       <img src="BUS/sohag.jpg" style="width:537px; height:320px;" /> 
+                   </div>
+                   <div>
+                       <img src="BUS/star.jpg" style="width:537px; height:320px;" />
+                   </div>
+                  
+                </div>
+
+          </div>
   </div>
 </asp:Content>

@@ -15,7 +15,7 @@
             <br />
             <br />
 
-            <asp:GridView ID="TrainSearchView" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="10" CellSpacing="25" CssClass="table table-responsive table-hover" DataSourceID="sdsSearchTrain" Font-Bold="True" Font-Size="Medium" GridLines="None" ShowHeader="False" Width="100%">
+            <asp:GridView ID="TrainSearchView" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="10" CellSpacing="25" CssClass="table table-responsive table-hover" DataSourceID="sdsSearchTrain" Font-Bold="True" Font-Size="Medium" GridLines="None" Width="100%">
                 <Columns>
                     <asp:BoundField DataField="tcompany_name" HeaderText="tcompany_name" SortExpression="tcompany_name" />
                     <asp:BoundField DataField="train_type" HeaderText="train_type" SortExpression="train_type" />
@@ -28,7 +28,7 @@
                     <asp:BoundField DataField="capacity" HeaderText="capacity" SortExpression="capacity" />
                     <asp:TemplateField ShowHeader="False">
                         <ItemTemplate>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" href="UserRegistration.aspx" CommandName="Select" Text="Book"></asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" href="UserRegistration.aspx" CommandName="Select" Text="Book Now"></asp:LinkButton>
                         </ItemTemplate>
                         <ControlStyle CssClass="btn btn-primary" />
                     </asp:TemplateField>
