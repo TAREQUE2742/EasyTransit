@@ -12,7 +12,7 @@
         <div class="container">
             <div class="col-lg-4 col-md-4 col-sm-3">
                 <br />
-                <asp:TextBox ID="txtsearchtrain" runat="server" CssClass="form-control" Width="97%"></asp:TextBox>
+                <asp:TextBox ID="txtsearchtrain" runat="server" Placeholder="Search Train ID by Train Company Name" CssClass="form-control" Width="97%"></asp:TextBox>
                 <br />
                 <asp:Button ID="btnsearchtrain" runat="server" CssClass="btn btn-primary" Text="Search Train " Width="60%" />
                 <br />

@@ -19,7 +19,7 @@
                 <br />
                 <br />
                 <div class="form-group">
-                    <asp:TextBox ID="txtsearch" runat="server" CssClass="form-control" OnDataBinding="txtsearch_DataBinding" Width="70%"></asp:TextBox>
+                    <asp:TextBox ID="txtsearch" runat="server" placeholder="Search Bus ID by Bus Company Name" CssClass="form-control" OnDataBinding="txtsearch_DataBinding" Width="70%"></asp:TextBox>
                     <br />
             <asp:Button ID="Button1" CssClass="btn btn-primary" style="display:inline-block" runat="server" Text="Search" OnClick="Button1_Click" />
             

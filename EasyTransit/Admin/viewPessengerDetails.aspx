@@ -3,15 +3,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container" style="padding:0px;background-color:#67C8B7;">
-       
-         <div class="col-lg-5 col-md-5 col-sm-4">
+      
                <br />
          <br />
-               <center><h2 style="color:white;">Search Passenger Details Information</h2></center> 
+               <center><h2>Search Passenger Details Information</h2>
           <br />
-         <asp:TextBox runat="server" ID="txtpassengerDetails" CssClass="form-control" Width="100%"></asp:TextBox>
+         <asp:TextBox runat="server" ID="txtpassengerDetails" placeholder="Search Passenger Details by Email" CssClass="form-control" Width="100%"></asp:TextBox>
          <br />
          <asp:Button runat="server" ID="tbnPassengerSearch" CssClass="btn btn-primary" Text="Search Passenger Details" Width="100%" />
+                   </center> 
              <br />
              <br />
              <asp:GridView ID="PassengerGrid" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="userid" DataSourceID="sdsPassenger" GridLines="Vertical" Width="100%">
@@ -42,8 +42,6 @@
                      <asp:ControlParameter ControlID="txtpassengerDetails" Name="email" PropertyName="Text" />
                  </SelectParameters>
                </asp:SqlDataSource>
-         </div>
-            <div class="col-lg-7 col-md-7 col-sm-8">
                 <br />
                 <center><h4>View Passenger Details</h4></center>
                 <br />
@@ -152,7 +150,5 @@
                         <asp:Parameter Name="userid" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
-         </div>
-         
     </div>
 </asp:Content>

@@ -11,7 +11,7 @@
                     <hr style="height:2px; background-color:#272323;"/>
                     <div class="container" style="background-color:#67C8B7;">
                         <div class="col-lg-4 col-md-3 col-sm-3">
-                            <asp:TextBox ID="txtsearchflight" runat="server" CssClass="form-control" Width="90%"></asp:TextBox>
+                            <asp:TextBox ID="txtsearchflight" runat="server" placeholder="Search Flight ID by Flight Company Name" CssClass="form-control" Width="90%"></asp:TextBox>
                             <br />
                             <asp:Button ID="btnsearchflight" runat="server" CssClass="btn btn-primary" OnClick="btnsearchflight_Click" Text="Search By Flight Company" Width="60%" />
                             <br />

@@ -143,6 +143,7 @@
     <Content Include="Admin\Contents\bootstrap.min.css" />
     <Content Include="Admin\Contents\jquery.mCustomScrollbar.min.css" />
     <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\FlightReservation.aspx" />
     <Content Include="Admin\image\back.jpg" />
     <Content Include="Admin\image\busShohag.jpg" />
     <Content Include="Admin\image\cancel.png" />
@@ -186,6 +187,7 @@
     <Content Include="Admin\Scripts\WebForms\WebForms.js" />
     <Content Include="Admin\Scripts\WebForms\WebParts.js" />
     <Content Include="Admin\Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Admin\TrainrReservation.aspx" />
     <Content Include="Admin\ViewBusDetails.aspx" />
     <Content Include="Admin\viewFlightDetails.aspx" />
     <Content Include="Admin\viewPessengerDetails.aspx" />
@@ -430,6 +432,20 @@
     </Compile>
     <Compile Include="Admin\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FlightReservation.aspx.cs">
+      <DependentUpon>FlightReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FlightReservation.aspx.designer.cs">
+      <DependentUpon>FlightReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TrainrReservation.aspx.cs">
+      <DependentUpon>TrainrReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TrainrReservation.aspx.designer.cs">
+      <DependentUpon>TrainrReservation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ViewBusDetails.aspx.cs">
       <DependentUpon>ViewBusDetails.aspx</DependentUpon>
